@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Wedding of Romeo & Juliet | Sakura Japanese</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@200;300;400;500&family=Shippori+Mincho:wght@400;500;600&family=Zen+Kurenaido&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --white: #ffffff;
+    --sakura: #ffc0cb;
+    --sakura-deep: #f5a5b5;
+    --sakura-soft: #ffe4e1;
+    --blush: #fff0f3;
+    --charcoal: #2c2c2c;
+    --ink: #4a4a4a;
+  }
+  body {
+    font-family: 'Noto Serif JP', serif;
+    background: var(--white);
+    color: var(--charcoal);
+    line-height: 1.8;
+    font-weight: 300;
+  }
+  .container { max-width: 600px; margin: 0 auto; background: var(--white); position: relative; overflow-x: hidden; }
+
+  /* SAKURA PETALS ANIMATION */
+  .petal {
+    position: absolute;
+    color: var(--sakura-deep);
+    font-size: 1.2rem;
+    opacity: 0.6;
+    pointer-events: none;
+    animation: fall 15s linear infinite;
+    z-index: 1;
+  }
+  .petal:nth-child(1) { left: 10%; animation-delay: 0s; }
+  .petal:nth-child(2) { left: 30%; animation-delay: 3s; }
+  .petal:nth-child(3) { left: 50%; animation-delay: 6s; }
+  .petal:nth-child(4) { left: 70%; animation-delay: 9s; }
+  .petal:nth-child(5) { left: 90%; animation-delay: 12s; }
+  @keyframes fall {
+    0% { transform: translateY(-100px) rotate(0deg); opacity: 0; }
+    10% { opacity: 0.6; }
+    90% { opacity: 0.6; }
+    100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+  }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(rgba(255,255,255,0.6), rgba(255,240,243,0.8)),
+                url('https://images.unsplash.com/photo-1490750967868-88aa4486c946?w=1200') center/cover;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    text-align: center; padding: 60px 30px;
+    position: relative; overflow: hidden;
+  }
+  .hero .kanji-frame {
+    width: 100px; height: 100px;
+    border: 1px solid var(--sakura-deep);
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 30px; position: relative;
+    background: rgba(255,255,255,0.8);
+    z-index: 2;
+  }
+  .hero .kanji-frame::before {
+    content: ''; position: absolute; inset: 5px;
+    border: 1px solid var(--sakura);
+  }
+  .hero .kanji-frame span {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 2rem; color: var(--sakura-deep);
+    font-weight: 600;
+  }
+  .hero .label {
+    font-family: 'Zen Kurenaido', sans-serif;
+    font-size: 0.85rem; letter-spacing: 4px;
+    color: var(--ink);
+    margin-bottom: 20px; position: relative; z-index: 2;
+  }
+  .hero h1 {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 3.5rem; color: var(--charcoal);
+    font-weight: 400; line-height: 1.2;
+    position: relative; z-index: 2;
+  }
+  .hero .amp {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 2rem; color: var(--sakura-deep);
+    margin: 10px 0; position: relative; z-index: 2;
+  }
+  .hero .date {
+    margin-top: 30px; font-family: 'Zen Kurenaido', sans-serif;
+    font-size: 0.9rem; letter-spacing: 5px;
+    color: var(--ink); position: relative; z-index: 2;
+  }
+  .hero .sakura-divider {
+    display: flex; align-items: center;
+    justify-content: center; gap: 15px;
+    margin: 20px auto; position: relative; z-index: 2;
+  }
+  .hero .sakura-divider .line { width: 50px; height: 1px; background: var(--sakura-deep); }
+  .hero .sakura-divider .flower { color: var(--sakura-deep); font-size: 1.3rem; }
+  
+  .open-btn {
+    margin-top: 40px; padding: 14px 40px;
+    background: var(--sakura-deep); color: var(--white);
+    border: none;
+    font-family: 'Zen Kurenaido', sans-serif;
+    letter-spacing: 3px; font-size: 0.9rem;
+    cursor: pointer; text-decoration: none;
+    display: inline-block; transition: 0.3s;
+    position: relative; z-index: 2;
+  }
+  .open-btn:hover { background: var(--charcoal); }
+
+  /* SECTIONS */
+  .section { padding: 80px 30px; text-align: center; position: relative; z-index: 2; }
+  .section-alt { background: var(--blush); }
+  .section h2 {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 2rem; color: var(--charcoal);
+    font-weight: 400; margin-bottom: 10px;
+    letter-spacing: 2px;
+  }
+  .section h2 em {
+    font-family: 'Shippori Mincho', serif;
+    color: var(--sakura-deep); font-style: normal;
+    font-weight: 500;
+  }
+  .sakura-divider {
+    display: flex; align-items: center;
+    justify-content: center; gap: 15px;
+    margin: 20px auto;
+  }
+  .sakura-divider .line { width: 40px; height: 1px; background: var(--sakura-deep); }
+  .sakura-divider .flower { color: var(--sakura-deep); font-size: 1.2rem; }
+  .quote {
+    font-family: 'Noto Serif JP', serif;
+    font-style: normal; color: var(--ink);
+    max-width: 450px; margin: 0 auto;
+    font-size: 0.95rem; line-height: 2;
+    font-weight: 300;
+  }
+  .quote cite {
+    display: block; margin-top: 20px;
+    font-family: 'Zen Kurenaido', sans-serif;
+    font-size: 0.85rem; letter-spacing: 2px;
+    color: var(--sakura-deep); font-style: normal;
+  }
+
+  /* COUPLE */
+  .couple-wrap { display: flex; flex-direction: column; gap: 40px; margin-top: 40px; }
+  .person { position: relative; }
+  .person .frame {
+    width: 190px; height: 190px; margin: 0 auto;
+    position: relative;
+    padding: 8px;
+    background: var(--white);
+    border: 1px solid var(--sakura);
+  }
+  .person .frame::before {
+    content: '桜'; position: absolute;
+    top: -15px; left: 50%; transform: translateX(-50%);
+    color: var(--sakura-deep); font-size: 1.2rem;
+    background: var(--white); padding: 0 10px;
+    font-family: 'Shippori Mincho', serif;
+  }
+  .person img { width: 100%; height: 100%; object-fit: cover; }
+  .person h3 {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 2rem; color: var(--charcoal);
+    margin-top: 25px; font-weight: 500;
+  }
+  .person .role {
+    font-family: 'Zen Kurenaido', sans-serif;
+    font-size: 0.8rem; letter-spacing: 3px;
+    color: var(--sakura-deep); margin-bottom: 5px;
+  }
+  .person p { font-size: 0.85rem; color: var(--ink); margin-top: 8px; font-weight: 300; }
+  .couple-amp {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 2.5rem; color: var(--sakura-deep);
+  }
+
+  /* EVENT */
+  .event-card {
+    background: var(--white);
+    padding: 35px 25px; margin: 20px 0;
+    border: 1px solid var(--sakura);
+    position: relative;
+  }
+  .event-card::before {
+    content: ''; position: absolute;
+    top: 8px; left: 8px; right: 8px; bottom: 8px;
+    border: 1px solid var(--sakura-soft);
+    pointer-events: none;
+  }
+  .event-card h3 {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 1.3rem; color: var(--sakura-deep);
+    letter-spacing: 3px; margin-bottom: 15px;
+    font-weight: 500;
+  }
+  .event-card .time { font-size: 0.9rem; color: var(--ink); letter-spacing: 2px; font-weight: 300; }
+  .event-card .place {
+    font-family: 'Noto Serif JP', serif;
+    color: var(--charcoal); margin: 15px 0; font-size: 1rem; font-weight: 400;
+  }
+  .btn-sakura {
+    display: inline-block; padding: 10px 25px;
+    background: var(--white); color: var(--sakura-deep);
+    border: 1px solid var(--sakura-deep);
+    text-decoration: none; font-family: 'Zen Kurenaido', sans-serif;
+    font-size: 0.85rem; letter-spacing: 2px;
+    margin-top: 15px; transition: 0.3s;
+  }
+  .btn-sakura:hover { background: var(--sakura-deep); color: var(--white); }
+
+  /* COUNTDOWN */
+  .countdown {
+    display: flex; justify-content: center;
+    gap: 12px; flex-wrap: wrap; margin-top: 30px;
+  }
+  .countdown div {
+    background: var(--white);
+    border: 1px solid var(--sakura);
+    padding: 18px 5px; width: 80px;
+  }
+  .countdown span {
+    display: block; font-family: 'Shippori Mincho', serif;
+    font-size: 2rem; color: var(--sakura-deep);
+    font-weight: 500;
+  }
+  .countdown small {
+    font-family: 'Zen Kurenaido', sans-serif;
+    font-size: 0.75rem; letter-spacing: 2px;
+    color: var(--ink);
+  }
+
+  /* GALLERY */
+  .gallery-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 10px; margin-top: 35px;
+  }
+  .gallery-item {
+    position: relative; overflow: hidden;
+    cursor: pointer; aspect-ratio: 1 / 1;
+    background: var(--sakura-soft);
+    border: 1px solid var(--sakura-soft);
+  }
+  .gallery-item img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.6s ease;
+    filter: brightness(1.02) saturate(0.95);
+  }
+  .gallery-item::after {
+    content: '桜'; position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    color: var(--white);
+    font-size: 2rem;
+    font-family: 'Shippori Mincho', serif;
+    background: rgba(245,165,181,0.85);
+    width: 60px; height: 60px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    transition: transform 0.4s;
+    z-index: 2;
+  }
+  .gallery-item:hover img { transform: scale(1.1); }
+  .gallery-item:hover::after { transform: translate(-50%, -50%) scale(1); }
+  .gallery-item.featured { grid-column: span 2; aspect-ratio: 16 / 10; }
+
+  /* LIGHTBOX */
+  .lightbox {
+    display: none; position: fixed; inset: 0;
+    background: rgba(255,240,243,0.98);
+    z-index: 9999; justify-content: center; align-items: center;
+    padding: 20px; animation: fadeIn 0.3s;
+  }
+  .lightbox.active { display: flex; }
+  .lightbox img { max-width: 90%; max-height: 85vh; object-fit: contain; box-shadow: 0 10px 50px rgba(245,165,181,0.3); }
+  .lightbox-close {
+    position: absolute; top: 20px; right: 20px;
+    width: 45px; height: 45px; background: var(--white);
+    color: var(--sakura-deep); font-size: 1.5rem;
+    cursor: pointer; border-radius: 50%;
+    border: 1px solid var(--sakura);
+    display: flex; align-items: center; justify-content: center;
+    transition: 0.3s;
+  }
+  .lightbox-close:hover { background: var(--sakura-deep); color: var(--white); }
+  .lightbox-nav {
+    position: absolute; top: 50%; transform: translateY(-50%);
+    width: 50px; height: 50px; background: var(--white);
+    color: var(--sakura-deep); font-size: 1.5rem;
+    cursor: pointer; border-radius: 50%;
+    border: 1px solid var(--sakura);
+    display: flex; align-items: center; justify-content: center;
+    transition: 0.3s;
+  }
+  .lightbox-nav:hover { background: var(--sakura-deep); color: var(--white); }
+  .lightbox-prev { left: 20px; }
+  .lightbox-next { right: 20px; }
+  .lightbox-counter {
+    position: absolute; bottom: 20px; left: 50%;
+    transform: translateX(-50%);
+    color: var(--sakura-deep); font-family: 'Zen Kurenaido', sans-serif;
+    font-size: 0.9rem; letter-spacing: 3px;
+  }
+  @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+  /* RSVP */
+  .btn-rsvp {
+    display: inline-block; padding: 15px 40px;
+    background: var(--sakura-deep); color: var(--white);
+    text-decoration: none; font-family: 'Zen Kurenaido', sans-serif;
+    letter-spacing: 3px; font-size: 0.9rem;
+    margin-top: 25px; transition: 0.3s;
+  }
+  .btn-rsvp:hover { background: var(--charcoal); }
+
+  /* FOOTER */
+  footer {
+    background: var(--charcoal);
+    padding: 50px 20px; text-align: center;
+    color: var(--white);
+  }
+  footer .names {
+    font-family: 'Shippori Mincho', serif;
+    font-size: 2.5rem; color: var(--sakura);
+    margin-bottom: 15px; font-weight: 400;
+  }
+  footer p { font-size: 0.8rem; letter-spacing: 2px; }
+  footer a { color: var(--sakura); text-decoration: none; }
+
+  @media (max-width: 480px) {
+    .hero h1 { font-size: 2.5rem; }
+    .section h2 { font-size: 1.6rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <section class="hero">
+    <span class="petal">🌸</span>
+    <span class="petal">🌸</span>
+    <span class="petal">🌸</span>
+    <span class="petal">🌸</span>
+    <span class="petal">🌸</span>
+    <div class="kanji-frame"><span>R&J</span></div>
+    <p class="label">〜 The Wedding Of 〜</p>
+    <h1>Romeo</h1>
+    <div class="amp">&</div>
+    <h1>Juliet</h1>
+    <div class="sakura-divider">
+      <span class="line"></span>
+      <span class="flower">❀</span>
+      <span class="line"></span>
+    </div>
+    <p class="date">25 • 12 • 2026</p>
+    <a href="#content" class="open-btn">Buka Undangan</a>
+  </section>
+
+  <div id="content">
+
+    <section class="section">
+      <h2>We Are <em>Getting Married</em></h2>
+      <div class="sakura-divider">
+        <span class="line"></span>
+        <span class="flower">❀</span>
+        <span class="line"></span>
+      </div>
+      <p class="quote">
+        "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu istri-istri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya."
+        <cite>— QS. Ar-Rum : 21</cite>
+      </p>
+    </section>
+
+    <section class="section section-alt">
+      <h2>The <em>Couple</em></h2>
+      <div class="sakura-divider">
+        <span class="line"></span>
+        <span class="flower">❀</span>
+        <span class="line"></span>
+      </div>
+      <div class="couple-wrap">
+        <div class="person">
+          <div class="frame">
+            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=400&h=400" alt="Romeo">
+          </div>
+          <p class="role">The Groom</p>
+          <h3>Romeo Montague</h3>
+          <p>Putra dari<br>Bpk. Montague & Ibu Montague</p>
+        </div>
+        <div class="couple-amp">&</div>
+        <div class="person">
+          <div class="frame">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400&h=400" alt="Juliet">
+          </div>
+          <p class="role">The Bride</p>
+          <h3>Juliet Capulet</h3>
+          <p>Putri dari<br>Bpk. Capulet & Ibu Capulet</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Save <em>The Date</em></h2>
+      <div class="sakura-divider">
+        <span class="line"></span>
+        <span class="flower">❀</span>
+        <span class="line"></span>
+      </div>
+      <p style="color: var(--sakura-deep); letter-spacing: 3px; font-size: 0.9rem; font-family: 'Zen Kurenaido', sans-serif;">Minggu, 25 Desember 2026</p>
+
+      <div class="event-card">
+        <h3>Akad Nikah</h3>
+        <p class="time">08.00 — 10.00 WIB</p>
+        <p class="place">Masjid Agung Al-Barkah</p>
+        <a href="https://maps.google.com" class="btn-sakura" target="_blank">Lihat Lokasi</a>
+      </div>
+
+      <div class="event-card">
+        <h3>Resepsi</h3>
+        <p class="time">11.00 — 14.00 WIB</p>
+        <p class="place">Grand Ballroom Hotel</p>
+        <a href="https://maps.google.com" class="btn-sakura" target="_blank">Lihat Lokasi</a>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <h2>Counting <em>Days</em></h2>
+      <div class="sakura-divider">
+        <span class="line"></span>
+        <span class="flower">❀</span>
+        <span class="line"></span>
+      </div>
+      <div class="countdown">
+        <div><span id="days">0</span><small>Hari</small></div>
+        <div><span id="hours">0</span><small>Jam</small></div>
+        <div><span id="minutes">0</span><small>Menit</small></div>
+        <div><span id="seconds">0</span><small>Detik</small></div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Our <em>Moments</em></h2>
+      <div class="sakura-divider">
+        <span class="line"></span>
+        <span class="flower">❀</span>
+        <span class="line"></span>
+      </div>
+      <p style="max-width: 400px; margin: 0 auto; font-size: 0.9rem; color: var(--ink); font-weight: 300;">
+        Setiap momen bersama adalah kelopak sakura yang jatuh dengan indah.
+      </p>
+
+      <div class="gallery-grid">
+        <div class="gallery-item featured" onclick="openLightbox(0)"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800" alt="1"></div>
+        <div class="gallery-item" onclick="openLightbox(1)"><img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&q=80&w=500" alt="2"></div>
+        <div class="gallery-item" onclick="openLightbox(2)"><img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&q=80&w=500" alt="3"></div>
+        <div class="gallery-item" onclick="openLightbox(3)"><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=500" alt="4"></div>
+        <div class="gallery-item" onclick="openLightbox(4)"><img src="https://images.unsplash.com/photo-1529636798458-921cf9424a28?auto=format&fit=crop&q=80&w=500" alt="5"></div>
+        <div class="gallery-item featured" onclick="openLightbox(5)"><img src="https://images.unsplash.com/photo-1525772764200-be829a350797?auto=format&fit=crop&q=80&w=800" alt="6"></div>
+        <div class="gallery-item" onclick="openLightbox(6)"><img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&q=80&w=500" alt="7"></div>
+        <div class="gallery-item" onclick="openLightbox(7)"><img src="https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&q=80&w=500" alt="8"></div>
+      </div>
+    </section>
+
+    <section class="section section-alt">
+      <h2>Konfirmasi <em>Kehadiran</em></h2>
+      <div class="sakura-divider">
+        <span class="line"></span>
+        <span class="flower">❀</span>
+        <span class="line"></span>
+      </div>
+      <p style="max-width: 400px; margin: 0 auto; font-size: 0.9rem; color: var(--ink); font-weight: 300;">
+        Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu.
+      </p>
+      <a href="https://wa.me/6285338564565?text=Halo,%20saya%20ingin%20konfirmasi%20kehadiran%20di%20pernikahan%20Romeo%20%26%20Juliet" class="btn-rsvp" target="_blank">Konfirmasi via WhatsApp</a>
+    </section>
+
+  </div>
+
+  <footer>
+    <p class="names">Romeo & Juliet</p>
+    <p>Dibuat dengan ❤️ oleh <a href="https://www.tokorazka.com/" target="_blank">Toko Razka</a></p>
+  </footer>
+</div>
+
+<!-- LIGHTBOX MODAL -->
+<div class="lightbox" id="lightbox">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <button class="lightbox-nav lightbox-prev" onclick="changeImage(-1)">‹</button>
+  <img id="lightbox-img" src="" alt="Gallery">
+  <button class="lightbox-nav lightbox-next" onclick="changeImage(1)">›</button>
+  <div class="lightbox-counter" id="lightbox-counter">1 / 8</div>
+</div>
+
+<script>
+  // Countdown Timer
+  const target = new Date("2026-12-25T08:00:00").getTime();
+  setInterval(() => {
+    const now = new Date().getTime();
+    const diff = target - now;
+    if (diff > 0) {
+      document.getElementById("days").textContent = Math.floor(diff / (1000*60*60*24));
+      document.getElementById("hours").textContent = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+      document.getElementById("minutes").textContent = Math.floor((diff % (1000*60*60)) / (1000*60));
+      document.getElementById("seconds").textContent = Math.floor((diff % (1000*60)) / 1000);
+    }
+  }, 1000);
+
+  // Smooth Scroll
+  document.querySelector('.open-btn').addEventListener('click', (e) => {
+    e.preventDefault();
+    document.querySelector('#content').scrollIntoView({ behavior: 'smooth' });
+  });
+
+  // Gallery Lightbox
+  const galleryImages = [
+    'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=1200',
+    'https://images.unsplash.com/photo-1606800052052-a08af7148866?auto=format&fit=crop&q=80&w=1200',
+    'https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&q=80&w=1200',
+    'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=1200',
+    'https://images.unsplash.com/photo-1529636798458-921cf9424a28?auto=format&fit=crop&q=80&w=1200',
+    'https://images.unsplash.com/photo-1525772764200-be829a350797?auto=format&fit=crop&q=80&w=1200',
+    'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&q=80&w=1200',
+    'https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&q=80&w=1200'
+  ];
+  let currentIndex = 0;
+
+  function openLightbox(index) {
+    currentIndex = index;
+    updateLightbox();
+    document.getElementById('lightbox').classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  function changeImage(direction) {
+    currentIndex += direction;
+    if (currentIndex < 0) currentIndex = galleryImages.length - 1;
+    if (currentIndex >= galleryImages.length) currentIndex = 0;
+    updateLightbox();
+  }
+  function updateLightbox() {
+    document.getElementById('lightbox-img').src = galleryImages[currentIndex];
+    document.getElementById('lightbox-counter').textContent = `${currentIndex + 1} / ${galleryImages.length}`;
+  }
+  document.addEventListener('keydown', (e) => {
+    if (!document.getElementById('lightbox').classList.contains('active')) return;
+    if (e.key === 'Escape') closeLightbox();
+    if (e.key === 'ArrowLeft') changeImage(-1);
+    if (e.key === 'ArrowRight') changeImage(1);
+  });
+  document.getElementById('lightbox').addEventListener('click', (e) => {
+    if (e.target.id === 'lightbox') closeLightbox();
+  });
+</script>
+</body>
+</html>
