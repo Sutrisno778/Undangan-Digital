@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Wedding of Romeo & Juliet | Tropical Garden</title>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lato:wght@300;400;700&family=Satisfy&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --green-dark: #1a3d2e;
+    --green-leaf: #2d5a3d;
+    --green-mid: #4a7c59;
+    --sage: #a8c09a;
+    --cream: #f5e9d3;
+    --terracotta: #d4a574;
+    --gold: #c9a961;
+  }
+  body {
+    font-family: 'Lato', sans-serif;
+    background: var(--green-dark);
+    color: var(--cream);
+    line-height: 1.7;
+  }
+  .container { max-width: 600px; margin: 0 auto; background: var(--green-dark); position: relative; overflow: hidden; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    background:
+      linear-gradient(135deg, rgba(26,61,46,0.85) 0%, rgba(45,90,61,0.85) 100%),
+      url('https://images.unsplash.com/photo-1545240623-88b3e7b2f9f6?w=1200') center/cover;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    text-align: center; padding: 40px 20px;
+    position: relative; overflow: hidden;
+  }
+  .hero .monstera {
+    position: absolute; width: 200px; height: 200px;
+    opacity: 0.3; font-size: 15rem; color: var(--sage);
+    pointer-events: none;
+  }
+  .hero .monstera.tl { top: -50px; left: -50px; transform: rotate(-20deg); }
+  .hero .monstera.br { bottom: -50px; right: -50px; transform: rotate(160deg); }
+
+  .hero .label {
+    font-size: 0.75rem; letter-spacing: 8px;
+    color: var(--sage); text-transform: uppercase;
+    margin-bottom: 30px; position: relative; z-index: 2;
+  }
+  .hero h1 {
+    font-family: 'Abril Fatface', serif;
+    font-size: 3.5rem; color: var(--cream);
+    line-height: 1.1; position: relative; z-index: 2;
+  }
+  .hero .amp {
+    font-family: 'Satisfy', cursive;
+    font-size: 2.5rem; color: var(--terracotta);
+    margin: 10px 0; position: relative; z-index: 2;
+  }
+  .hero .date {
+    margin-top: 30px; font-size: 0.85rem;
+    letter-spacing: 5px; color: var(--sage);
+    position: relative; z-index: 2;
+  }
+  .hero .leaf-divider {
+    display: flex; align-items: center;
+    justify-content: center; gap: 15px;
+    margin: 20px auto; position: relative; z-index: 2;
+  }
+  .hero .leaf-divider .line { width: 50px; height: 1px; background: var(--sage); }
+  .hero .leaf-divider .leaf { color: var(--terracotta); font-size: 1.5rem; }
+  
+  .open-btn {
+    margin-top: 35px; padding: 14px 35px;
+    background: var(--terracotta); color: var(--green-dark);
+    border: none; border-radius: 3px;
+    letter-spacing: 3px; font-size: 0.75rem;
+    text-transform: uppercase; cursor: pointer;
+    text-decoration: none; display: inline-block;
+    font-weight: 700; position: relative; z-index: 2;
+    transition: 0.3s;
+  }
+  .open-btn:hover { background: var(--cream); }
+
+  /* SECTIONS */
+  .section { padding: 70px 30px; text-align: center; position: relative; }
+  .section-alt { background: var(--green-leaf); }
+  .section h2 {
+    font-family: 'Abril Fatface', serif;
+    font-size: 2.3rem; color: var(--cream);
+    margin-bottom: 15px; letter-spacing: 1px;
+  }
+  .leaf-divider {
+    display: flex; align-items: center;
+    justify-content: center; gap: 12px;
+    margin: 20px auto;
+  }
+  .leaf-divider .line { width: 40px; height: 1px; background: var(--sage); }
+  .leaf-divider .leaf { color: var(--terracotta); font-size: 1.3rem; }
+  .quote {
+    font-style: italic; color: var(--cream);
+    max-width: 450px; margin: 0 auto;
+    font-size: 0.95rem; line-height: 1.8;
+  }
+  .quote cite {
+    display: block; margin-top: 15px;
+    font-size: 0.8rem; letter-spacing: 3px;
+    color: var(--terracotta); font-style: normal;
+    text-transform: uppercase;
+  }
+
+  /* COUPLE */
+  .couple-wrap { display: flex; flex-direction: column; gap: 40px; margin-top: 30px; }
+  .person { position: relative; }
+  .person .frame {
+    width: 180px; height: 180px; margin: 0 auto;
+    position: relative;
+    border: 3px solid var(--sage);
+    padding: 8px;
+  }
+  .person .frame::before {
+    content: '🌿'; position: absolute;
+    top: -20px; left: 50%; transform: translateX(-50%);
+    font-size: 1.8rem; background: var(--green-dark);
+    padding: 0 10px;
+  }
+  .person img {
+    width: 100%; height: 100%; object-fit: cover;
+  }
+  .person h3 {
+    font-family: 'Abril Fatface', serif;
+    font-size: 1.8rem; color: var(--terracotta);
+    margin-top: 25px; letter-spacing: 1px;
+  }
+  .person p {
+    font-size: 0.85rem; color: var(--cream);
+    margin-top: 8px;
+  }
+  .couple-amp {
+    font-family: 'Satisfy', cursive;
+    font-size: 3rem; color: var(--terracotta);
+  }
+
+  /* EVENT */
+  .event-card {
+    background: rgba(245,233,211,0.05);
+    border: 1px solid var(--sage);
+    padding: 30px 25px; margin: 20px 0;
+    position: relative;
+    border-radius: 5px;
+  }
+  .event-card::before {
+    content: '🌿'; position: absolute;
+    top: -15px; left: 50%; transform: translateX(-50%);
+    background: var(--green-dark); padding: 0 10px;
+    font-size: 1.3rem;
+  }
+  .event-card h3 {
+    font-family: 'Abril Fatface', serif;
+    font-size: 1.5rem; color: var(--terracotta);
+    letter-spacing: 2px; margin-bottom: 12px;
+    text-transform: uppercase;
+  }
+  .event-card .time {
+    font-size: 0.9rem; color: var(--cream);
+    letter-spacing: 2px;
+  }
+  .event-card .place {
+    font-style: italic; color: var(--sage);
+    margin: 12px 0; font-size: 1rem;
+  }
+  .btn-leaf {
+    display: inline-block; padding: 10px 25px;
+    background: var(--terracotta); color: var(--green-dark);
+    text-decoration: none; font-size: 0.75rem;
+    letter-spacing: 2px; text-transform: uppercase;
+    margin-top: 10px; transition: 0.3s;
+    font-weight: 700;
+  }
+  .btn-leaf:hover { background: var(--cream); }
+
+  /* COUNTDOWN */
+  .countdown {
+    display: flex; justify-content: center;
+    gap: 10px; flex-wrap: wrap; margin-top: 25px;
+  }
+  .countdown div {
+    background: rgba(245,233,211,0.1);
+    border: 1px solid var(--sage);
+    padding: 15px 5px; width: 75px;
+    border-radius: 5px;
+  }
+  .countdown span {
+    display: block; font-family: 'Abril Fatface', serif;
+    font-size: 2rem; color: var(--terracotta);
+  }
+  .countdown small {
+    font-size: 0.7rem; letter-spacing: 2px;
+    color: var(--sage); text-transform: uppercase;
+  }
+
+  /* GALLERY */
+  .gallery-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr);
+    gap: 10px; margin-top: 30px;
+  }
+  .gallery-item {
+    aspect-ratio: 1/1; overflow: hidden;
+    border: 1px solid var(--sage);
+    border-radius: 5px;
+  }
+  .gallery-item img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: 0.5s;
+  }
+  .gallery-item:hover img { transform: scale(1.1); }
+
+  /* RSVP */
+  .btn-rsvp {
+    display: inline-block; padding: 14px 35px;
+    background: var(--terracotta); color: var(--green-dark);
+    text-decoration: none; letter-spacing: 3px;
+    font-size: 0.8rem; text-transform: uppercase;
+    margin-top: 25px; transition: 0.3s;
+    font-weight: 700;
+  }
+  .btn-rsvp:hover { background: var(--cream); }
+
+  /* FOOTER */
+  footer {
+    background: #0f2820;
+    padding: 50px 20px; text-align: center;
+    border-top: 1px solid var(--sage);
+  }
+  footer .names {
+    font-family: 'Abril Fatface', serif;
+    font-size: 2.2rem; color: var(--terracotta);
+    margin-bottom: 15px; letter-spacing: 2px;
+  }
+  footer p { font-size: 0.8rem; color: var(--cream); }
+  footer a { color: var(--terracotta); text-decoration: none; }
+
+  .fade-in { opacity: 0; transform: translateY(30px); transition: all 1s ease; }
+  .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 480px) {
+    .hero h1 { font-size: 2.5rem; }
+    .section h2 { font-size: 1.8rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <section class="hero">
+    <div class="monstera tl">🍃</div>
+    <div class="monstera br">🍃</div>
+    <p class="label">The Wedding Of</p>
+    <h1>Romeo</h1>
+    <div class="amp">&</div>
+    <h1>Juliet</h1>
+    <div class="leaf-divider">
+      <span class="line"></span>
+      <span class="leaf">🌿</span>
+      <span class="line"></span>
+    </div>
+    <p class="date">25 • 12 • 2026</p>
+    <a href="#content" class="open-btn">Buka Undangan</a>
+  </section>
+
+  <div id="content">
+
+    <section class="section fade-in">
+      <h2>We Are Getting Married</h2>
+      <div class="leaf-divider">
+        <span class="line"></span>
+        <span class="leaf">🌿</span>
+        <span class="line"></span>
+      </div>
+      <p class="quote">
+        "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu istri-istri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya."
+        <cite>— QS. AR-RUM : 21</cite>
+      </p>
+    </section>
+
+    <section class="section section-alt fade-in">
+      <h2>The Couple</h2>
+      <div class="leaf-divider">
+        <span class="line"></span>
+        <span class="leaf">🌿</span>
+        <span class="line"></span>
+      </div>
+      <div class="couple-wrap">
+        <div class="person">
+          <div class="frame">
+            <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=400&h=400" alt="Romeo">
+          </div>
+          <h3>Romeo Montague</h3>
+          <p>Putra dari<br>Bpk. Montague & Ibu Montague</p>
+        </div>
+        <div class="couple-amp">&</div>
+        <div class="person">
+          <div class="frame">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400&h=400" alt="Juliet">
+          </div>
+          <h3>Juliet Capulet</h3>
+          <p>Putri dari<br>Bpk. Capulet & Ibu Capulet</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section fade-in">
+      <h2>Rangkaian Acara</h2>
+      <div class="leaf-divider">
+        <span class="line"></span>
+        <span class="leaf">🌿</span>
+        <span class="line"></span>
+      </div>
+      <p style="color: var(--sage); letter-spacing: 2px; font-size: 0.9rem;">Minggu, 25 Desember 2026</p>
+
+      <div class="event-card">
+        <h3>Akad Nikah</h3>
+        <p class="time">Pukul 08.00 — 10.00 WIB</p>
+        <p class="place">Masjid Agung Al-Barkah</p>
+        <a href="https://maps.google.com" class="btn-leaf" target="_blank">Lihat Lokasi</a>
+      </div>
+
+      <div class="event-card">
+        <h3>Resepsi</h3>
+        <p class="time">Pukul 11.00 — 14.00 WIB</p>
+        <p class="place">Grand Ballroom Hotel</p>
+        <a href="https://maps.google.com" class="btn-leaf" target="_blank">Lihat Lokasi</a>
+      </div>
+    </section>
+
+    <section class="section section-alt fade-in">
+      <h2>Counting Days</h2>
+      <div class="leaf-divider">
+        <span class="line"></span>
+        <span class="leaf">🌿</span>
+        <span class="line"></span>
+      </div>
+      <div class="countdown">
+        <div><span id="days">0</span><small>Hari</small></div>
+        <div><span id="hours">0</span><small>Jam</small></div>
+        <div><span id="minutes">0</span><small>Menit</small></div>
+        <div><span id="seconds">0</span><small>Detik</small></div>
+      </div>
+    </section>
+
+    <section class="section fade-in">
+      <h2>Our Moments</h2>
+      <div class="leaf-divider">
+        <span class="line"></span>
+        <span class="leaf">🌿</span>
+        <span class="line"></span>
+      </div>
+      <p style="max-width: 400px; margin: 0 auto; font-size: 0.9rem; color: var(--sage);">
+        Setiap momen bersama adalah petualangan indah di taman kehidupan.
+      </p>
+      <div class="gallery-grid">
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=500" alt="1"></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=500" alt="2"></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1529636798458-921cf9424a28?w=500" alt="3"></div>
+        <div class="gallery-item"><img src="https://images.unsplash.com/photo-1525772764200-be829a350797?w=500" alt="4"></div>
+      </div>
+    </section>
+
+    <section class="section section-alt fade-in">
+      <h2>Konfirmasi Kehadiran</h2>
+      <div class="leaf-divider">
+        <span class="line"></span>
+        <span class="leaf">🌿</span>
+        <span class="line"></span>
+      </div>
+      <p style="max-width: 400px; margin: 0 auto; font-size: 0.9rem;">
+        Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu.
+      </p>
+      <a href="https://wa.me/6285338564565?text=Halo,%20saya%20ingin%20konfirmasi%20kehadiran%20di%20pernikahan%20Romeo%20%26%20Juliet" class="btn-rsvp" target="_blank">Konfirmasi via WhatsApp</a>
+    </section>
+
+  </div>
+
+  <footer>
+    <p class="names">Romeo & Juliet</p>
+    <p>Dibuat dengan ❤️ oleh <a href="https://www.tokorazka.com/" target="_blank">Toko Razka</a></p>
+  </footer>
+</div>
+
+<script>
+  // Countdown Timer
+  const target = new Date("2026-12-25T08:00:00").getTime();
+  setInterval(() => {
+    const now = new Date().getTime();
+    const diff = target - now;
+    if (diff > 0) {
+      document.getElementById("days").textContent = Math.floor(diff / (1000*60*60*24));
+      document.getElementById("hours").textContent = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+      document.getElementById("minutes").textContent = Math.floor((diff % (1000*60*60)) / (1000*60));
+      document.getElementById("seconds").textContent = Math.floor((diff % (1000*60)) / 1000);
+    }
+  }, 1000);
+
+  // Smooth Scroll
+  document.querySelector('.open-btn').addEventListener('click', (e) => {
+    e.preventDefault();
+    document.querySelector('#content').scrollIntoView({ behavior: 'smooth' });
+  });
+
+  // Fade In Animation
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
