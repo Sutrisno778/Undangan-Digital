@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Katalog Undangan Digital | Toko Razka</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+    background: linear-gradient(135deg, #fdf6f0 0%, #f5ebe0 100%);
+    color: #3d3027; 
+    text-align: center; 
+    padding: 40px 20px;
+    min-height: 100vh;
+  }
+  .header { margin-bottom: 40px; }
+  h1 { color: #c67b5c; font-size: 2.2rem; margin-bottom: 10px; font-weight: 700; }
+  .subtitle { color: #666; font-size: 1.1rem; margin-bottom: 15px; }
+  .brand { display: inline-block; padding: 8px 25px; background: #3d3027; color: #f5ebe0; border-radius: 30px; font-size: 0.85rem; letter-spacing: 3px; font-weight: bold; }
+  
+  .grid { 
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
+    gap: 25px; 
+    max-width: 1100px; 
+    margin: 40px auto; 
+  }
+  .card { 
+    background: white; 
+    border-radius: 20px; 
+    padding: 30px 20px; 
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06); 
+    border: 1px solid #e8d9c5;
+    transition: all 0.3s ease; 
+    position: relative; 
+    overflow: hidden; 
+  }
+  .card::before { 
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px; 
+    background: linear-gradient(90deg, #c67b5c, #d4a373); 
+  }
+  .card:hover { transform: translateY(-8px); box-shadow: 0 15px 35px rgba(198,123,92,0.15); }
+  .card .icon { font-size: 2.8rem; margin-bottom: 15px; }
+  .card h3 { color: #3d3027; margin-bottom: 10px; font-size: 1.2rem; font-weight: 700; }
+  .card p { font-size: 0.85rem; color: #777; margin-bottom: 20px; line-height: 1.5; }
+  .btn { 
+    display: inline-block; background: #c67b5c; color: white; 
+    padding: 10px 25px; text-decoration: none; border-radius: 25px; 
+    font-weight: bold; transition: 0.3s; font-size: 0.85rem; 
+  }
+  .btn:hover { background: #a05a3c; transform: scale(1.05); }
+  
+  .cta { 
+    margin: 50px auto; padding: 30px; background: white; 
+    border-radius: 20px; max-width: 600px; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05); 
+  }
+  .cta h3 { color: #3d3027; margin-bottom: 10px; }
+  .cta p { color: #666; margin-bottom: 20px; font-size: 0.95rem; }
+  .btn-wa { 
+    display: inline-block; background: #25D366; color: white; 
+    padding: 14px 35px; text-decoration: none; border-radius: 30px; 
+    font-weight: bold; box-shadow: 0 5px 15px rgba(37,211,102,0.3); transition: 0.3s; 
+  }
+  .btn-wa:hover { background: #1ebe5d; transform: translateY(-2px); }
+  
+  footer { margin-top: 60px; padding-top: 30px; border-top: 1px solid #e8d9c5; }
+  footer p { font-size: 0.85rem; color: #999; }
+  footer a { color: #c67b5c; text-decoration: none; font-weight: bold; }
+</style>
+</head>
+<body>
+
+  <div class="header">
+    <h1>✨ Katalog Undangan Digital</h1>
+    <p class="subtitle">Pilih template favorit Anda untuk melihat preview langsung</p>
+    <div class="brand">TOKO RAZKA</div>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <div class="icon">🍂</div>
+      <h3>1. Earth Tone</h3>
+      <p>Desain dasar yang hangat, natural, dan menenangkan dengan warna coklat krem.</p>
+      <a href="/earth-tone" class="btn">Lihat Preview</a>
+    </div>
+    <div class="card">
+      <div class="icon">🖤</div>
+      <h3>2. Dark Luxury</h3>
+      <p>Kesan eksklusif dan premium dengan perpaduan hitam pekat dan emas.</p>
+      <a href="/dark-luxury" class="btn">Lihat Preview</a>
+    </div>
+    <div class="card">
+      <div class="icon">🌸</div>
+      <h3>3. Floral Romantic</h3>
+      <p>Lembut dan feminim dengan palet pink pastel dan hijau sage.</p>
+      <a href="/floral-romantic" class="btn">Lihat Preview</a>
+    </div>
+    <div class="card">
+      <div class="icon">🌿</div>
+      <h3>4. Tropical Garden</h3>
+      <p>Segar dan eksotis dengan nuansa hijau tropis dan daun monstera.</p>
+      <a href="/tropical-garden" class="btn">Lihat Preview</a>
+    </div>
+    <div class="card">
+      <div class="icon">👑</div>
+      <h3>5. Royal Classic</h3>
+      <p>Mewah dan megah dengan gaya baroque, navy blue, dan gold.</p>
+      <a href="/royal-classic" class="btn">Lihat Preview</a>
+    </div>
+    <div class="card">
+      <div class="icon">📜</div>
+      <h3>6. Rustic Vintage</h3>
+      <p>Klasik dan nostalgic dengan tekstur kertas tua dan warna coklat.</p>
+      <a href="/rustic-vintage" class="btn">Lihat Preview</a>
+    </div>
+    <div class="card">
+      <div class="icon">🌹</div>
+      <h3>7. Modern Minimalist</h3>
+      <p>Bersih dan elegan dengan sentuhan rose gold dan gallery foto.</p>
+      <a href="/modern-minimalist" class="btn">Lihat Preview</a>
+    </div>
+    <div class="card">
+      <div class="icon">🌾</div>
+      <h3>8. Bohemian Chic</h3>
+      <p>Unik dan etnik dengan warna terracotta, cocok untuk outdoor.</p>
+      <a href="/bohemian-chic" class="btn">Lihat Preview</a>
+    </div>
+    <div class="card">
+      <div class="icon">🌙</div>
+      <h3>9. Midnight Celestial</h3>
+      <p>Magis dan misterius dengan tema langit malam dan bintang.</p>
+      <a href="/midnight-celestial" class="btn">Lihat Preview</a>
+    </div>
+    <div class="card">
+      <div class="icon">🌸</div>
+      <h3>10. Sakura Japanese</h3>
+      <p>Zen dan minimalis dengan nuansa putih dan kelopak sakura.</p>
+      <a href="/sakura-japanese" class="btn">Lihat Preview</a>
+    </div>
+  </div>
+
+  <div class="cta">
+    <h3>Suka dengan salah satu desain?</h3>
+    <p>Kami bisa menyesuaikan nama, foto, tanggal, dan detail lainnya sesuai kebutuhan Anda. Tersedia juga layanan cetak undangan fisik!</p>
+    <a href="https://wa.me/6285338564565?text=Halo%20Toko%20Razka,%20saya%20tertarik%20dengan%20Undangan%20Digital%20dari%20katalog%20online." class="btn-wa">💬 Pesan via WhatsApp</a>
+  </div>
+
+  <footer>
+    <p>Dibuat dengan ❤️ oleh <a href="https://www.tokorazka.com/" target="_blank">Toko Razka</a></p>
+    <p style="margin-top: 8px; font-size: 0.75rem;">© 2026 All Rights Reserved</p>
+  </footer>
+
+</body>
+</html>
