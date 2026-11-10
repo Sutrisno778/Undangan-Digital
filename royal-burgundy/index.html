@@ -8,315 +8,126 @@
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   :root {
-    --burgundy: #5c0a0a;
-    --burgundy-dark: #3a0505;
-    --gold: #d4af37;
-    --gold-light: #f3e5ab;
-    --cream: #fdfbf7;
-    --text: #2c1810;
+    --burgundy: #5c0a0a; --burgundy-dark: #3a0505; --gold: #d4af37;
+    --gold-light: #f3e5ab; --cream: #fdfbf7; --text: #2c1810;
   }
-  
-  /* LOCK SCROLL INITIALLY */
-  body {
-    font-family: 'Lora', serif;
-    background: var(--cream);
-    color: var(--text);
-    line-height: 1.6;
-    overflow: hidden; /* Dikunci saat cover masih ada */
-  }
+  body { font-family: 'Lora', serif; background: var(--cream); color: var(--text); line-height: 1.6; overflow: hidden; }
 
-  /* ================= COVER PAGE ================= */
+  /* COVER PAGE */
   #cover {
     position: fixed; top: 0; left: 0; width: 100%; height: 100%;
     background: linear-gradient(135deg, var(--cream) 0%, #f5eedc 100%);
-    z-index: 9999;
-    display: flex; justify-content: center; align-items: center;
-    transition: transform 1.2s cubic-bezier(0.77, 0, 0.175, 1);
-    overflow-y: auto;
+    z-index: 9999; display: flex; justify-content: center; align-items: center;
+    transition: transform 1.2s cubic-bezier(0.77, 0, 0.175, 1); overflow-y: auto;
   }
   #cover.slide-up { transform: translateY(-100%); }
-
   .cover-frame {
-    width: 90%; max-width: 450px;
-    padding: 40px 20px;
-    text-align: center;
-    position: relative;
-    border: 2px solid var(--gold);
-    background: rgba(255,255,255,0.5);
+    width: 90%; max-width: 450px; padding: 40px 20px; text-align: center;
+    position: relative; border: 2px solid var(--gold); background: rgba(255,255,255,0.5);
   }
-  .cover-frame::before {
-    content: ''; position: absolute;
-    top: 6px; left: 6px; right: 6px; bottom: 6px;
-    border: 1px solid var(--gold);
-  }
-  .corner {
-    position: absolute; width: 30px; height: 30px;
-    border: 2px solid var(--gold);
-  }
+  .cover-frame::before { content: ''; position: absolute; top: 6px; left: 6px; right: 6px; bottom: 6px; border: 1px solid var(--gold); }
+  .corner { position: absolute; width: 30px; height: 30px; border: 2px solid var(--gold); }
   .corner.tl { top: -2px; left: -2px; border-right: none; border-bottom: none; }
   .corner.tr { top: -2px; right: -2px; border-left: none; border-bottom: none; }
   .corner.bl { bottom: -2px; left: -2px; border-right: none; border-top: none; }
   .corner.br { bottom: -2px; right: -2px; border-left: none; border-top: none; }
 
-  .cover-frame .ornament-top {
-    font-size: 2rem; color: var(--burgundy); margin-bottom: 15px;
-  }
-  .cover-frame .label {
-    font-family: 'Cinzel', serif; font-size: 0.8rem;
-    letter-spacing: 4px; color: var(--burgundy);
-    text-transform: uppercase; margin-bottom: 10px;
-  }
-  .cover-frame h1 {
-    font-family: 'Pinyon Script', cursive;
-    font-size: 3.5rem; color: var(--burgundy);
-    line-height: 1.2; margin-bottom: 5px;
-  }
-  .cover-frame .amp {
-    font-family: 'Pinyon Script', cursive;
-    font-size: 2.5rem; color: var(--gold);
-  }
-  .cover-frame .date {
-    font-family: 'Cinzel', serif; font-size: 0.85rem;
-    letter-spacing: 3px; color: var(--text);
-    margin: 20px 0; padding: 10px 0;
-    border-top: 1px solid var(--gold);
-    border-bottom: 1px solid var(--gold);
-  }
-  .guest-box {
-    margin: 25px 0; padding: 15px;
-    background: rgba(212,175,55,0.1);
-    border-radius: 5px;
-  }
+  .cover-frame .ornament-top { font-size: 2rem; color: var(--burgundy); margin-bottom: 15px; }
+  .cover-frame .label { font-family: 'Cinzel', serif; font-size: 0.8rem; letter-spacing: 4px; color: var(--burgundy); text-transform: uppercase; margin-bottom: 10px; }
+  .cover-frame h1 { font-family: 'Pinyon Script', cursive; font-size: 3.5rem; color: var(--burgundy); line-height: 1.2; margin-bottom: 5px; }
+  .cover-frame .amp { font-family: 'Pinyon Script', cursive; font-size: 2.5rem; color: var(--gold); }
+  .cover-frame .date { font-family: 'Cinzel', serif; font-size: 0.85rem; letter-spacing: 3px; color: var(--text); margin: 20px 0; padding: 10px 0; border-top: 1px solid var(--gold); border-bottom: 1px solid var(--gold); }
+  .guest-box { margin: 25px 0; padding: 15px; background: rgba(212,175,55,0.1); border-radius: 5px; }
   .guest-box p { font-size: 0.8rem; color: var(--text); margin-bottom: 5px; }
-  .guest-box h3 {
-    font-family: 'Pinyon Script', cursive;
-    font-size: 2rem; color: var(--burgundy);
-  }
+  .guest-box h3 { font-family: 'Pinyon Script', cursive; font-size: 2rem; color: var(--burgundy); }
   .btn-open {
-    display: inline-block; padding: 12px 35px;
-    background: var(--burgundy); color: var(--gold-light);
-    border: 1px solid var(--gold);
-    font-family: 'Cinzel', serif; font-size: 0.8rem;
-    letter-spacing: 3px; text-transform: uppercase;
-    cursor: pointer; text-decoration: none;
-    transition: 0.3s; margin-top: 10px;
+    display: inline-block; padding: 12px 35px; background: var(--burgundy); color: var(--gold-light);
+    border: 1px solid var(--gold); font-family: 'Cinzel', serif; font-size: 0.8rem;
+    letter-spacing: 3px; text-transform: uppercase; cursor: pointer; text-decoration: none; transition: 0.3s; margin-top: 10px;
   }
   .btn-open:hover { background: var(--gold); color: var(--burgundy); }
 
-  /* ================= MAIN CONTENT ================= */
+  /* MAIN CONTENT */
   .container { max-width: 600px; margin: 0 auto; position: relative; }
-  
   .section { padding: 70px 25px; text-align: center; position: relative; }
   .section-alt { background: #f9f1e3; }
-  
-  .section h2 {
-    font-family: 'Pinyon Script', cursive;
-    font-size: 3rem; color: var(--burgundy);
-    margin-bottom: 10px;
-  }
-  .section h3 {
-    font-family: 'Cinzel', serif; font-size: 1.2rem;
-    color: var(--burgundy); letter-spacing: 3px;
-    text-transform: uppercase; margin-bottom: 20px;
-  }
-
-  /* ORNATE DIVIDER */
-  .divider {
-    display: flex; align-items: center; justify-content: center;
-    gap: 15px; margin: 15px auto 30px;
-  }
+  .section h2 { font-family: 'Pinyon Script', cursive; font-size: 3rem; color: var(--burgundy); margin-bottom: 10px; }
+  .divider { display: flex; align-items: center; justify-content: center; gap: 15px; margin: 15px auto 30px; }
   .divider .line { width: 60px; height: 1px; background: var(--gold); }
-  .divider .diamond {
-    width: 10px; height: 10px; background: var(--gold);
-    transform: rotate(45deg);
-  }
+  .divider .diamond { width: 10px; height: 10px; background: var(--gold); transform: rotate(45deg); }
 
-  /* ORNATE FRAME BOX */
-  .ornate-box {
-    border: 2px solid var(--gold);
-    padding: 30px 20px; margin: 20px auto;
-    max-width: 450px; position: relative;
-    background: #fff;
-  }
-  .ornate-box::before {
-    content: ''; position: absolute;
-    top: 5px; left: 5px; right: 5px; bottom: 5px;
-    border: 1px solid var(--gold);
-    pointer-events: none;
-  }
-  .ornate-box .box-corner {
-    position: absolute; width: 15px; height: 15px;
-    border: 2px solid var(--gold); background: #fff;
-  }
-  .ornate-box .box-corner.tl { top: -2px; left: -2px; border-right: none; border-bottom: none; }
-  .ornate-box .box-corner.tr { top: -2px; right: -2px; border-left: none; border-bottom: none; }
-  .ornate-box .box-corner.bl { bottom: -2px; left: -2px; border-right: none; border-top: none; }
-  .ornate-box .box-corner.br { bottom: -2px; right: -2px; border-left: none; border-top: none; }
+  .ornate-box { border: 2px solid var(--gold); padding: 30px 20px; margin: 20px auto; max-width: 450px; position: relative; background: #fff; }
+  .ornate-box::before { content: ''; position: absolute; top: 5px; left: 5px; right: 5px; bottom: 5px; border: 1px solid var(--gold); pointer-events: none; }
+  .box-corner { position: absolute; width: 15px; height: 15px; border: 2px solid var(--gold); background: #fff; }
+  .box-corner.tl { top: -2px; left: -2px; border-right: none; border-bottom: none; }
+  .box-corner.tr { top: -2px; right: -2px; border-left: none; border-bottom: none; }
+  .box-corner.bl { bottom: -2px; left: -2px; border-right: none; border-top: none; }
+  .box-corner.br { bottom: -2px; right: -2px; border-left: none; border-top: none; }
 
-  .quote {
-    font-style: italic; color: var(--text);
-    max-width: 400px; margin: 0 auto; font-size: 0.95rem;
-  }
-  .quote cite {
-    display: block; margin-top: 15px;
-    font-family: 'Cinzel', serif; font-size: 0.75rem;
-    letter-spacing: 2px; color: var(--burgundy); font-style: normal;
-  }
+  .quote { font-style: italic; color: var(--text); max-width: 400px; margin: 0 auto; font-size: 0.95rem; }
+  .quote cite { display: block; margin-top: 15px; font-family: 'Cinzel', serif; font-size: 0.75rem; letter-spacing: 2px; color: var(--burgundy); font-style: normal; }
 
-  /* COUPLE */
   .couple-wrap { display: flex; flex-direction: column; gap: 30px; margin-top: 20px; }
-  .person .img-ornate {
-    width: 160px; height: 160px; margin: 0 auto 15px;
-    position: relative; padding: 6px;
-    border: 2px solid var(--gold);
-    border-radius: 50%;
-  }
-  .person .img-ornate::before {
-    content: ''; position: absolute;
-    top: 2px; left: 2px; right: 2px; bottom: 2px;
-    border: 1px dashed var(--gold);
-    border-radius: 50%;
-  }
-  .person img {
-    width: 100%; height: 100%; object-fit: cover;
-    border-radius: 50%;
-  }
-  .person h4 {
-    font-family: 'Pinyon Script', cursive;
-    font-size: 2.2rem; color: var(--burgundy);
-    margin-bottom: 5px;
-  }
+  .person .img-ornate { width: 160px; height: 160px; margin: 0 auto 15px; position: relative; padding: 6px; border: 2px solid var(--gold); border-radius: 50%; }
+  .person .img-ornate::before { content: ''; position: absolute; top: 2px; left: 2px; right: 2px; bottom: 2px; border: 1px dashed var(--gold); border-radius: 50%; }
+  .person img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+  .person h4 { font-family: 'Pinyon Script', cursive; font-size: 2.2rem; color: var(--burgundy); margin-bottom: 5px; }
   .person p { font-size: 0.85rem; color: var(--text); }
-  .couple-amp {
-    font-family: 'Pinyon Script', cursive;
-    font-size: 3rem; color: var(--gold);
-  }
+  .couple-amp { font-family: 'Pinyon Script', cursive; font-size: 3rem; color: var(--gold); }
 
-  /* EVENT */
-  .event-card {
-    background: #fff; border: 2px solid var(--burgundy);
-    padding: 25px 20px; margin: 20px auto;
-    max-width: 400px; position: relative;
-  }
-  .event-card::before {
-    content: ''; position: absolute;
-    top: 4px; left: 4px; right: 4px; bottom: 4px;
-    border: 1px solid var(--burgundy);
-  }
-  .event-card h4 {
-    font-family: 'Cinzel', serif; font-size: 1.1rem;
-    color: var(--burgundy); letter-spacing: 2px;
-    margin-bottom: 15px; text-transform: uppercase;
-  }
+  .event-card { background: #fff; border: 2px solid var(--burgundy); padding: 25px 20px; margin: 20px auto; max-width: 400px; position: relative; }
+  .event-card::before { content: ''; position: absolute; top: 4px; left: 4px; right: 4px; bottom: 4px; border: 1px solid var(--burgundy); }
+  .event-card h4 { font-family: 'Cinzel', serif; font-size: 1.1rem; color: var(--burgundy); letter-spacing: 2px; margin-bottom: 15px; text-transform: uppercase; }
   .event-card p { font-size: 0.9rem; margin-bottom: 8px; }
   .event-card .place { font-style: italic; color: var(--burgundy); font-weight: 500; }
-  
-  .btn-map {
-    display: inline-block; margin-top: 15px;
-    padding: 8px 20px; background: var(--burgundy);
-    color: var(--gold-light); text-decoration: none;
-    font-family: 'Cinzel', serif; font-size: 0.7rem;
-    letter-spacing: 2px; text-transform: uppercase;
-    border: 1px solid var(--gold); transition: 0.3s;
-  }
+  .btn-map { display: inline-block; margin-top: 15px; padding: 8px 20px; background: var(--burgundy); color: var(--gold-light); text-decoration: none; font-family: 'Cinzel', serif; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; border: 1px solid var(--gold); transition: 0.3s; }
   .btn-map:hover { background: var(--gold); color: var(--burgundy); }
 
-  /* COUNTDOWN */
-  .countdown {
-    display: flex; justify-content: center;
-    gap: 10px; flex-wrap: wrap; margin-top: 20px;
-  }
-  .countdown div {
-    background: var(--burgundy); color: var(--gold-light);
-    border: 1px solid var(--gold);
-    padding: 15px 5px; width: 70px;
-    font-family: 'Cinzel', serif;
-  }
+  .countdown { display: flex; justify-content: center; gap: 10px; flex-wrap: wrap; margin-top: 20px; }
+  .countdown div { background: var(--burgundy); color: var(--gold-light); border: 1px solid var(--gold); padding: 15px 5px; width: 70px; font-family: 'Cinzel', serif; }
   .countdown span { display: block; font-size: 1.8rem; font-weight: 700; }
   .countdown small { font-size: 0.65rem; letter-spacing: 1px; text-transform: uppercase; }
 
-  /* GALLERY */
-  .gallery-grid {
-    display: grid; grid-template-columns: repeat(2, 1fr);
-    gap: 12px; margin-top: 20px;
-  }
-  .gallery-item {
-    aspect-ratio: 1/1; overflow: hidden;
-    border: 2px solid var(--gold);
-    padding: 3px; background: #fff;
-  }
-  .gallery-item img {
-    width: 100%; height: 100%; object-fit: cover;
-    border: 1px solid var(--gold);
-  }
+  .gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 20px; }
+  .gallery-item { aspect-ratio: 1/1; overflow: hidden; border: 2px solid var(--gold); padding: 3px; background: #fff; }
+  .gallery-item img { width: 100%; height: 100%; object-fit: cover; border: 1px solid var(--gold); }
 
-  /* RSVP */
-  .btn-rsvp {
-    display: inline-block; padding: 14px 35px;
-    background: var(--burgundy); color: var(--gold-light);
-    text-decoration: none; font-family: 'Cinzel', serif;
-    font-size: 0.8rem; letter-spacing: 3px;
-    text-transform: uppercase; margin-top: 20px;
-    border: 1px solid var(--gold); transition: 0.3s;
-  }
+  .btn-rsvp { display: inline-block; padding: 14px 35px; background: var(--burgundy); color: var(--gold-light); text-decoration: none; font-family: 'Cinzel', serif; font-size: 0.8rem; letter-spacing: 3px; text-transform: uppercase; margin-top: 20px; border: 1px solid var(--gold); transition: 0.3s; }
   .btn-rsvp:hover { background: var(--gold); color: var(--burgundy); }
 
-  /* FOOTER */
-  footer {
-    background: var(--burgundy-dark); color: var(--gold-light);
-    text-align: center; padding: 40px 20px;
-    border-top: 3px double var(--gold);
-  }
-  footer .names {
-    font-family: 'Pinyon Script', cursive;
-    font-size: 2.5rem; color: var(--gold);
-    margin-bottom: 10px;
-  }
+  footer { background: var(--burgundy-dark); color: var(--gold-light); text-align: center; padding: 40px 20px; border-top: 3px double var(--gold); }
+  footer .names { font-family: 'Pinyon Script', cursive; font-size: 2.5rem; color: var(--gold); margin-bottom: 10px; }
   footer a { color: var(--gold); text-decoration: none; }
 
-  @media (max-width: 480px) {
-    .cover-frame h1 { font-size: 2.8rem; }
-    .section h2 { font-size: 2.5rem; }
-  }
+  @media (max-width: 480px) { .cover-frame h1 { font-size: 2.8rem; } .section h2 { font-size: 2.5rem; } }
 </style>
 </head>
 <body>
 
-<!-- ================= COVER PAGE ================= -->
 <div id="cover">
   <div class="cover-frame">
     <div class="corner tl"></div><div class="corner tr"></div>
     <div class="corner bl"></div><div class="corner br"></div>
-    
     <div class="ornament-top">❦</div>
     <p class="label">The Wedding Of</p>
-    <h1>Romeo</h1>
-    <div class="amp">&</div>
-    <h1>Juliet</h1>
+    <h1>Romeo</h1><div class="amp">&</div><h1>Juliet</h1>
     <p class="date">25 • 12 • 2026</p>
-    
     <div class="guest-box">
       <p>Kepada Yth. Bapak/Ibu/Saudara/i</p>
       <h3>Tamu Undangan</h3>
     </div>
-    
     <button class="btn-open" onclick="bukaUndangan()">Buka Undangan</button>
   </div>
 </div>
 
-<!-- ================= MAIN CONTENT ================= -->
 <div class="container">
-
   <section class="section">
     <div class="ornate-box">
       <div class="box-corner tl"></div><div class="box-corner tr"></div>
       <div class="box-corner bl"></div><div class="box-corner br"></div>
       <h2>Bismillah</h2>
       <div class="divider"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
-      <p class="quote">
-        "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu istri-istri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya."
-        <cite>— QS. AR-RUM : 21</cite>
-      </p>
+      <p class="quote">"Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu istri-istri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya."<cite>— QS. AR-RUM : 21</cite></p>
     </div>
   </section>
 
@@ -325,19 +136,13 @@
     <div class="divider"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
     <div class="couple-wrap">
       <div class="person">
-        <div class="img-ornate">
-          <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=400&h=400" alt="Romeo">
-        </div>
-        <h4>Romeo Montague</h4>
-        <p>Putra dari Bpk. Montague & Ibu Montague</p>
+        <div class="img-ornate"><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=400&h=400" alt="Romeo"></div>
+        <h4>Romeo Montague</h4><p>Putra dari Bpk. Montague & Ibu Montague</p>
       </div>
       <div class="couple-amp">&</div>
       <div class="person">
-        <div class="img-ornate">
-          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400&h=400" alt="Juliet">
-        </div>
-        <h4>Juliet Capulet</h4>
-        <p>Putri dari Bpk. Capulet & Ibu Capulet</p>
+        <div class="img-ornate"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400&h=400" alt="Juliet"></div>
+        <h4>Juliet Capulet</h4><p>Putri dari Bpk. Capulet & Ibu Capulet</p>
       </div>
     </div>
   </section>
@@ -346,18 +151,12 @@
     <h2>Save The Date</h2>
     <div class="divider"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
     <p style="font-family: 'Cinzel', serif; letter-spacing: 2px; margin-bottom: 20px;">Minggu, 25 Desember 2026</p>
-    
     <div class="event-card">
-      <h4>Akad Nikah</h4>
-      <p>08.00 — 10.00 WIB</p>
-      <p class="place">Masjid Agung Al-Barkah</p>
+      <h4>Akad Nikah</h4><p>08.00 — 10.00 WIB</p><p class="place">Masjid Agung Al-Barkah</p>
       <a href="https://maps.google.com" class="btn-map" target="_blank">Lihat Lokasi</a>
     </div>
-
     <div class="event-card">
-      <h4>Resepsi</h4>
-      <p>11.00 — 14.00 WIB</p>
-      <p class="place">Grand Ballroom Hotel</p>
+      <h4>Resepsi</h4><p>11.00 — 14.00 WIB</p><p class="place">Grand Ballroom Hotel</p>
       <a href="https://maps.google.com" class="btn-map" target="_blank">Lihat Lokasi</a>
     </div>
   </section>
@@ -390,9 +189,7 @@
       <div class="box-corner bl"></div><div class="box-corner br"></div>
       <h2>RSVP</h2>
       <div class="divider"><span class="line"></span><span class="diamond"></span><span class="line"></span></div>
-      <p style="font-size: 0.9rem; margin-bottom: 15px;">
-        Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu.
-      </p>
+      <p style="font-size: 0.9rem; margin-bottom: 15px;">Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu.</p>
       <a href="https://wa.me/6285338564565?text=Halo,%20saya%20ingin%20konfirmasi%20kehadiran%20di%20pernikahan%20Romeo%20%26%20Juliet" class="btn-rsvp" target="_blank">Konfirmasi Kehadiran</a>
     </div>
   </section>
@@ -404,14 +201,11 @@
 </div>
 
 <script>
-  // FUNGSI BUKA UNDANGAN (SLIDE UP COVER)
   function bukaUndangan() {
     const cover = document.getElementById('cover');
     cover.classList.add('slide-up');
-    document.body.style.overflow = 'auto'; // Membuka kunci scroll
+    document.body.style.overflow = 'auto'; 
   }
-
-  // COUNTDOWN TIMER
   const target = new Date("2026-12-25T08:00:00").getTime();
   setInterval(() => {
     const now = new Date().getTime();
