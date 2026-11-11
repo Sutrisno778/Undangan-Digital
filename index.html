@@ -1,180 +1,246 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Katalog Undangan Digital | Toko Razka</title>
-<style>
-  * { margin: 0; padding: 0; box-sizing: border-box; }
-  body { 
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
-    background: linear-gradient(135deg, #fdf6f0 0%, #f5ebe0 100%);
-    color: #3d3027; 
-    text-align: center; 
-    padding: 40px 20px;
-    min-height: 100vh;
-  }
-  .header { margin-bottom: 40px; }
-  h1 { color: #c67b5c; font-size: 2.2rem; margin-bottom: 10px; font-weight: 700; }
-  .subtitle { color: #666; font-size: 1.1rem; margin-bottom: 15px; }
-  .brand { display: inline-block; padding: 8px 25px; background: #3d3027; color: #f5ebe0; border-radius: 30px; font-size: 0.85rem; letter-spacing: 3px; font-weight: bold; }
-  
-  .grid { 
-    display: grid; 
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); 
-    gap: 25px; 
-    max-width: 1100px; 
-    margin: 40px auto; 
-  }
-  .card { 
-    background: white; 
-    border-radius: 20px; 
-    padding: 30px 20px; 
-    box-shadow: 0 8px 25px rgba(0,0,0,0.06); 
-    border: 1px solid #e8d9c5;
-    transition: all 0.3s ease; 
-    position: relative; 
-    overflow: hidden; 
-  }
-  .card::before { 
-    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px; 
-    background: linear-gradient(90deg, #c67b5c, #d4a373); 
-  }
-  .card:hover { transform: translateY(-8px); box-shadow: 0 15px 35px rgba(198,123,92,0.15); }
-  .card .icon { font-size: 2.8rem; margin-bottom: 15px; }
-  .card h3 { color: #3d3027; margin-bottom: 10px; font-size: 1.2rem; font-weight: 700; }
-  .card p { font-size: 0.85rem; color: #777; margin-bottom: 20px; line-height: 1.5; }
-  .btn { 
-    display: inline-block; background: #c67b5c; color: white; 
-    padding: 10px 25px; text-decoration: none; border-radius: 25px; 
-    font-weight: bold; transition: 0.3s; font-size: 0.85rem; 
-  }
-  .btn:hover { background: #a05a3c; transform: scale(1.05); }
-  
-  .cta { 
-    margin: 50px auto; padding: 30px; background: white; 
-    border-radius: 20px; max-width: 600px; 
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05); 
-  }
-  .cta h3 { color: #3d3027; margin-bottom: 10px; }
-  .cta p { color: #666; margin-bottom: 20px; font-size: 0.95rem; }
-  .btn-wa { 
-    display: inline-block; background: #25D366; color: white; 
-    padding: 14px 35px; text-decoration: none; border-radius: 30px; 
-    font-weight: bold; box-shadow: 0 5px 15px rgba(37,211,102,0.3); transition: 0.3s; 
-  }
-  .btn-wa:hover { background: #1ebe5d; transform: translateY(-2px); }
-  
-  footer { margin-top: 60px; padding-top: 30px; border-top: 1px solid #e8d9c5; }
-  footer p { font-size: 0.85rem; color: #999; }
-  footer a { color: #c67b5c; text-decoration: none; font-weight: bold; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog Lengkap Undangan Digital - Toko Razka.com</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <!-- FontAwesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+<body class="bg-slate-50 font-sans text-slate-800 antialiased">
 
-  <div class="header">
-    <h1>✨ Katalog Undangan Digital</h1>
-    <p class="subtitle">Pilih template favorit Anda untuk melihat preview langsung</p>
-    <div class="brand">TOKO RAZKA</div>
-  </div>
+    <!-- HEADER BRANDING -->
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-30 px-6 py-4 flex items-center justify-between shadow-sm">
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-amber-600 text-white font-serif font-bold flex items-center justify-center text-xl">R</div>
+            <div>
+                <h1 class="font-serif font-bold text-lg text-slate-900 leading-tight">
+                    <a href="https://www.tokorazka.com" target="_blank" class="text-slate-900 hover:text-amber-600 transition">TOKO RAZKA</a><span class="text-amber-600">.com</span>
+                </h1>
+                <p class="text-xs text-slate-500">Pusat Undangan & Kebutuhan Cetak Terpercaya</p>
+            </div>
+        </div>
+        <a href="https://wa.me/6285338564565?text=Halo%20Toko%20Razka,%20saya%20ingin%20pesan%20undangan%20digital" target="_blank" class="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full text-xs font-semibold flex items-center gap-2 transition shadow-sm">
+            <i class="fab fa-whatsapp text-sm"></i> Hubungi Kami
+        </a>
+    </header>
 
-  <div class="grid">
-    <div class="card">
-      <div class="icon">🍂</div>
-      <h3>1. Earth Tone</h3>
-      <p>Desain dasar yang hangat, natural, dan menenangkan dengan warna coklat krem.</p>
-      <a href="./earth-tone/" class="btn">Lihat Preview</a>
-    </div>
-    <div class="card">
-      <div class="icon">🖤</div>
-      <h3>2. Dark Luxury</h3>
-      <p>Kesan eksklusif dan premium dengan perpaduan hitam pekat dan emas.</p>
-      <a href="./dark-luxury/" class="btn">Lihat Preview</a>
-    </div>
-    <div class="card">
-      <div class="icon">🌸</div>
-      <h3>3. Floral Romantic</h3>
-      <p>Lembut dan feminim dengan palet pink pastel dan hijau sage.</p>
-      <a href="./floral-romantic/" class="btn">Lihat Preview</a>
-    </div>
-    <div class="card">
-      <div class="icon">🌿</div>
-      <h3>4. Tropical Garden</h3>
-      <p>Segar dan eksotis dengan nuansa hijau tropis dan daun monstera.</p>
-      <a href="./tropical-garden/" class="btn">Lihat Preview</a>
-    </div>
-    <div class="card">
-      <div class="icon">👑</div>
-      <h3>5. Royal Classic</h3>
-      <p>Mewah dan megah dengan gaya baroque, navy blue, dan gold.</p>
-      <a href="./royal-classic/" class="btn">Lihat Preview</a>
-    </div>
-    <div class="card">
-      <div class="icon">📜</div>
-      <h3>6. Rustic Vintage</h3>
-      <p>Klasik dan nostalgic dengan tekstur kertas tua dan warna coklat.</p>
-      <a href="./rustic-vintage/" class="btn">Lihat Preview</a>
-    </div>
-    <div class="card">
-      <div class="icon">🌹</div>
-      <h3>7. Modern Minimalist</h3>
-      <p>Bersih dan elegan dengan sentuhan rose gold dan gallery foto.</p>
-      <a href="./modern-minimalist/" class="btn">Lihat Preview</a>
-    </div>
-    <div class="card">
-      <div class="icon">🌾</div>
-      <h3>8. Bohemian Chic</h3>
-      <p>Unik dan etnik dengan warna terracotta, cocok untuk outdoor.</p>
-      <a href="./bohemian-chic/" class="btn">Lihat Preview</a>
-    </div>
-    <div class="card">
-      <div class="icon">🌙</div>
-      <h3>9. Midnight Celestial</h3>
-      <p>Magis dan misterius dengan tema langit malam dan bintang.</p>
-      <a href="./midnight-celestial/" class="btn">Lihat Preview</a>
-    </div>
-    <div class="card">
-      <div class="icon">🌸</div>
-      <h3>10. Sakura Japanese</h3>
-      <p>Zen dan minimalis dengan nuansa putih dan kelopak sakura.</p>
-      <a href="./sakura-japanese/" class="btn">Lihat Preview</a>
-    </div>
-    <div class="card">
-      <div class="icon">👑</div>
-      <h3>11. Royal Burgundy</h3>
-      <p>Kaya akan ornamen klasik, bingkai ganda, dan fitur Cover Slide-Up. Nuansa merah marun dan emas yang sangat mewah.</p>
-      <a href="./royal-burgundy/" class="btn">Lihat Preview</a>
-    </div>
-    <div class="card">
-      <div class="icon">R</div>
-      <h3>12. Blangko Razka</h3>
-      <p>Zen dan minimalis dengan nuansa putih dan kelopak sakura.</p>
-      <a href="./sakura-japanese/" class="btn">Lihat Preview</a>
-    </div>
-    <div class="card">
-      <div class="icon">R</div>
-      <h3>13. luxury-navy</h3>
-      <p>Zen dan minimalis dengan nuansa putih dan kelopak sakura.</p>
-      <a href="./luxury-navy/" class="btn">Lihat Preview</a>
-    </div>
-    <div class="card">
-      <div class="icon">R</div>
-      <h3>14. sage-botani</h3>
-      <p>Zen dan minimalis dengan nuansa putih dan kelopak sakura.</p>
-      <a href="./sage-botanic/" class="btn">Lihat Preview</a>
-    </div>
-  </div>
+    <!-- BANNER KATALOG -->
+    <section class="py-12 px-6 text-center max-w-3xl mx-auto">
+        <span class="text-xs font-bold text-amber-700 uppercase tracking-widest bg-amber-50 px-3.5 py-1 rounded-full border border-amber-200">Katalog Lengkap (15 Pilihan Tema)</span>
+        <h2 class="font-serif text-3xl md:text-4xl font-bold text-slate-900 mt-3">Pilihan Tema Undangan Digital</h2>
+        <p class="text-slate-600 text-xs md:text-sm mt-2">Pilih desain favorit Anda untuk dipinjau secara langsung dengan tampilan interaktif penuh pada layar ponsel Anda.</p>
+    </section>
 
-  <div class="cta">
-    <h3>Suka dengan salah satu desain?</h3>
-    <p>Kami bisa menyesuaikan nama, foto, tanggal, dan detail lainnya sesuai kebutuhan Anda. Tersedia juga layanan cetak undangan fisik!</p>
-    <a href="https://wa.me/6285338564565?text=Halo%20Toko%20Razka,%20saya%20tertarik%20dengan%20Undangan%20Digital%20dari%20katalog%20online." class="btn-wa">💬 Pesan via WhatsApp</a>
-  </div>
+    <!-- DAFTAR KATALOG TEMPLATE (15 PILIHAN) -->
+    <main class="max-w-6xl mx-auto px-6 pb-20 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
 
-  <footer>
-    <p>Dibuat dengan ❤️ oleh <a href="https://www.tokorazka.com/" target="_blank">Toko Razka</a></p>
-    <p style="margin-top: 8px; font-size: 0.75rem;">© 2026 All Rights Reserved</p>
-  </footer>
+        <!-- 1. SAKURA BLOSSOM -->
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition">
+            <div class="h-40 bg-pink-100 flex items-center justify-center border-b border-pink-200 text-pink-600 font-serif text-xl font-bold">🌸 Sakura Blossom</div>
+            <div class="p-5">
+                <span class="text-[10px] font-bold text-pink-600 bg-pink-50 px-2 py-0.5 rounded-full uppercase">Romantic & Floral</span>
+                <h3 class="font-serif font-bold text-base text-slate-900 mt-2">Tema Bunga Sakura</h3>
+                <p class="text-xs text-slate-500 mt-1 leading-relaxed">Nuansa merah muda romantis dengan musik akustik, galeri foto, & RSVP.</p>
+                <div class="mt-4 pt-3 border-t border-slate-100">
+                    <a href="./tema-sakura/?to=Nama+Tamu" target="_blank" class="w-full py-2 bg-pink-600 hover:bg-pink-700 text-white text-center rounded-xl text-xs font-semibold transition block">Lihat Demo <i class="fas fa-external-link-alt ml-1"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. EMERALD LUXURY -->
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition">
+            <div class="h-40 bg-slate-900 flex items-center justify-center border-b border-amber-500/30 text-amber-400 font-serif text-xl font-bold">✨ Emerald Luxury</div>
+            <div class="p-5">
+                <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full uppercase">Mewah & Elegan</span>
+                <h3 class="font-serif font-bold text-base text-slate-900 mt-2">Tema Emerald & Gold</h3>
+                <p class="text-xs text-slate-500 mt-1 leading-relaxed">Perpaduan warna hijau zamrud gelap dan aksen emas eksklusif.</p>
+                <div class="mt-4 pt-3 border-t border-slate-100">
+                    <a href="./tema-emerald/?to=Nama+Tamu" target="_blank" class="w-full py-2 bg-slate-900 hover:bg-slate-800 text-amber-400 text-center rounded-xl text-xs font-semibold transition block border border-amber-500/30">Lihat Demo <i class="fas fa-external-link-alt ml-1"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. SUNSET WARM GOLD -->
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition">
+            <div class="h-40 bg-amber-50 flex items-center justify-center border-b border-amber-200 text-amber-800 font-serif text-xl font-bold">🌅 Sunset Warm Gold</div>
+            <div class="p-5">
+                <span class="text-[10px] font-bold text-amber-700 bg-amber-50 px-2 py-0.5 rounded-full uppercase">Warm & Minimalist</span>
+                <h3 class="font-serif font-bold text-base text-slate-900 mt-2">Tema Sunset Warm</h3>
+                <p class="text-xs text-slate-500 mt-1 leading-relaxed">Nuansa senja yang hangat, bersih, natural, dan estetik.</p>
+                <div class="mt-4 pt-3 border-t border-slate-100">
+                    <a href="./tema-sunset/?to=Nama+Tamu" target="_blank" class="w-full py-2 bg-amber-700 hover:bg-amber-800 text-white text-center rounded-xl text-xs font-semibold transition block">Lihat Demo <i class="fas fa-external-link-alt ml-1"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. LUXURY NAVY -->
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition">
+            <div class="h-40 bg-slate-950 flex items-center justify-center border-b border-blue-900 text-amber-300 font-serif text-xl font-bold">💎 Dark Luxury Navy</div>
+            <div class="p-5">
+                <span class="text-[10px] font-bold text-blue-800 bg-blue-50 px-2 py-0.5 rounded-full uppercase">Premium Classic</span>
+                <h3 class="font-serif font-bold text-base text-slate-900 mt-2">Tema Navy & Gold</h3>
+                <p class="text-xs text-slate-500 mt-1 leading-relaxed">Biru dongker tegas dipadu kilau emas lengkap dengan narasi kisah cinta.</p>
+                <div class="mt-4 pt-3 border-t border-slate-100">
+                    <a href="./luxury-navy/?to=Nama+Tamu" target="_blank" class="w-full py-2 bg-blue-950 hover:bg-blue-900 text-amber-300 text-center rounded-xl text-xs font-semibold transition block">Lihat Demo <i class="fas fa-external-link-alt ml-1"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 5. SAGE BOTANICAL -->
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition">
+            <div class="h-40 bg-emerald-50 flex items-center justify-center border-b border-emerald-200 text-emerald-800 font-serif text-xl font-bold">🌿 Sage Botanical</div>
+            <div class="p-5">
+                <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full uppercase">Fresh & Botanical</span>
+                <h3 class="font-serif font-bold text-base text-slate-900 mt-2">Tema Sage Botanical</h3>
+                <p class="text-xs text-slate-500 mt-1 leading-relaxed">Warna sage green kekinian berkonsep dedaunan natural.</p>
+                <div class="mt-4 pt-3 border-t border-slate-100">
+                    <a href="./tema-sage-botanical/?to=Nama+Tamu" target="_blank" class="w-full py-2 bg-emerald-800 hover:bg-emerald-900 text-white text-center rounded-xl text-xs font-semibold transition block">Lihat Demo <i class="fas fa-external-link-alt ml-1"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 6. MINIMALIST MONOKROM -->
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition">
+            <div class="h-40 bg-zinc-900 flex items-center justify-center border-b border-zinc-700 text-white font-serif text-xl font-bold">🖤 Monokrom Modern</div>
+            <div class="p-5">
+                <span class="text-[10px] font-bold text-zinc-800 bg-zinc-100 px-2 py-0.5 rounded-full uppercase">Clean & Professional</span>
+                <h3 class="font-serif font-bold text-base text-slate-900 mt-2">Tema Minimalist Monokrom</h3>
+                <p class="text-xs text-slate-500 mt-1 leading-relaxed">Hitam putih bersih, elegan, dan berkelas untuk gaya modern.</p>
+                <div class="mt-4 pt-3 border-t border-slate-100">
+                    <a href="./tema-monokrom/?to=Nama+Tamu" target="_blank" class="w-full py-2 bg-zinc-900 hover:bg-black text-white text-center rounded-xl text-xs font-semibold transition block">Lihat Demo <i class="fas fa-external-link-alt ml-1"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 7. RUSTIC WOODY -->
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition">
+            <div class="h-40 bg-[#f7efe2] flex items-center justify-center border-b border-[#e7d6be] text-[#734f32] font-serif text-xl font-bold">🍂 Rustic Woody</div>
+            <div class="p-5">
+                <span class="text-[10px] font-bold text-[#734f32] bg-[#f7efe2] px-2 py-0.5 rounded-full uppercase">Vintage & Natural</span>
+                <h3 class="font-serif font-bold text-base text-slate-900 mt-2">Tema Rustic Woody</h3>
+                <p class="text-xs text-slate-500 mt-1 leading-relaxed">Nuansa kayu antik, cokelat hangat pas untuk konsep outdoor.</p>
+                <div class="mt-4 pt-3 border-t border-slate-100">
+                    <a href="./tema-rustic/?to=Nama+Tamu" target="_blank" class="w-full py-2 bg-[#734f32] hover:bg-[#5c3d26] text-white text-center rounded-xl text-xs font-semibold transition block">Lihat Demo <i class="fas fa-external-link-alt ml-1"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 8. EARTH TONE -->
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition">
+            <div class="h-40 bg-[#d5bdaf] flex items-center justify-center border-b border-[#c5a085] text-[#3d3027] font-serif text-xl font-bold">🤎 Earth Tone</div>
+            <div class="p-5">
+                <span class="text-[10px] font-bold text-[#8c6543] bg-[#f5ebe0] px-2 py-0.5 rounded-full uppercase">Warm & Cozy</span>
+                <h3 class="font-serif font-bold text-base text-slate-900 mt-2">Tema Earth Tone</h3>
+                <p class="text-xs text-slate-500 mt-1 leading-relaxed">Desain dasar hangat, natural, dan menenangkan dengan warna krem.</p>
+                <div class="mt-4 pt-3 border-t border-slate-100">
+                    <a href="./earth-tone/?to=Nama+Tamu" target="_blank" class="w-full py-2 bg-[#8c6543] hover:bg-[#734f32] text-white text-center rounded-xl text-xs font-semibold transition block">Lihat Demo <i class="fas fa-external-link-alt ml-1"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 9. FLORAL ROMANTIC -->
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition">
+            <div class="h-40 bg-[#fce4ec] flex items-center justify-center border-b border-[#f8bbd0] text-[#c2185b] font-serif text-xl font-bold">🌸 Floral Romantic</div>
+            <div class="p-5">
+                <span class="text-[10px] font-bold text-[#c2185b] bg-[#fce4ec] px-2 py-0.5 rounded-full uppercase">Soft & Feminine</span>
+                <h3 class="font-serif font-bold text-base text-slate-900 mt-2">Tema Floral Romantic</h3>
+                <p class="text-xs text-slate-500 mt-1 leading-relaxed">Lembut dengan palet pink pastel dan sentuhan dekorasi bunga.</p>
+                <div class="mt-4 pt-3 border-t border-slate-100">
+                    <a href="./floral-romantic/?to=Nama+Tamu" target="_blank" class="w-full py-2 bg-[#c2185b] hover:bg-[#ad1457] text-white text-center rounded-xl text-xs font-semibold transition block">Lihat Demo <i class="fas fa-external-link-alt ml-1"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 10. TROPICAL GARDEN -->
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition">
+            <div class="h-40 bg-[#e8f5e9] flex items-center justify-center border-b border-[#c8e6c9] text-[#2e7d32] font-serif text-xl font-bold">🌿 Tropical Garden</div>
+            <div class="p-5">
+                <span class="text-[10px] font-bold text-[#2e7d32] bg-[#e8f5e9] px-2 py-0.5 rounded-full uppercase">Fresh & Exotic</span>
+                <h3 class="font-serif font-bold text-base text-slate-900 mt-2">Tema Tropical Garden</h3>
+                <p class="text-xs text-slate-500 mt-1 leading-relaxed">Segar dan eksotis dengan nuansa hijau tropis daun monstera.</p>
+                <div class="mt-4 pt-3 border-t border-slate-100">
+                    <a href="./tropical-garden/?to=Nama+Tamu" target="_blank" class="w-full py-2 bg-[#2e7d32] hover:bg-[#1b5e20] text-white text-center rounded-xl text-xs font-semibold transition block">Lihat Demo <i class="fas fa-external-link-alt ml-1"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 11. ROYAL CLASSIC -->
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition">
+            <div class="h-40 bg-[#fff8e1] flex items-center justify-center border-b border-[#ffecb3] text-[#f57f17] font-serif text-xl font-bold">👑 Royal Classic</div>
+            <div class="p-5">
+                <span class="text-[10px] font-bold text-[#f57f17] bg-[#fff8e1] px-2 py-0.5 rounded-full uppercase">Grand & Majestic</span>
+                <h3 class="font-serif font-bold text-base text-slate-900 mt-2">Tema Royal Classic</h3>
+                <p class="text-xs text-slate-500 mt-1 leading-relaxed">Mewah dan megah dengan gaya baroque, navy blue, dan gold.</p>
+                <div class="mt-4 pt-3 border-t border-slate-100">
+                    <a href="./royal-classic/?to=Nama+Tamu" target="_blank" class="w-full py-2 bg-[#f57f17] hover:bg-[#e65100] text-white text-center rounded-xl text-xs font-semibold transition block">Lihat Demo <i class="fas fa-external-link-alt ml-1"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 12. RUSTIC VINTAGE -->
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition">
+            <div class="h-40 bg-[#efebe9] flex items-center justify-center border-b border-[#d7ccc8] text-[#4e342e] font-serif text-xl font-bold">📜 Rustic Vintage</div>
+            <div class="p-5">
+                <span class="text-[10px] font-bold text-[#4e342e] bg-[#efebe9] px-2 py-0.5 rounded-full uppercase">Nostalgic & Classic</span>
+                <h3 class="font-serif font-bold text-base text-slate-900 mt-2">Tema Rustic Vintage</h3>
+                <p class="text-xs text-slate-500 mt-1 leading-relaxed">Klasik dengan tekstur kertas tua dan nuansa warna cokelat.</p>
+                <div class="mt-4 pt-3 border-t border-slate-100">
+                    <a href="./rustic-vintage/?to=Nama+Tamu" target="_blank" class="w-full py-2 bg-[#4e342e] hover:bg-[#3e2723] text-white text-center rounded-xl text-xs font-semibold transition block">Lihat Demo <i class="fas fa-external-link-alt ml-1"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 13. MODERN MINIMALIST -->
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition">
+            <div class="h-40 bg-[#f3e5f5] flex items-center justify-center border-b border-[#e1bee7] text-[#8e24aa] font-serif text-xl font-bold">🌹 Modern Minimalist</div>
+            <div class="p-5">
+                <span class="text-[10px] font-bold text-[#8e24aa] bg-[#f3e5f5] px-2 py-0.5 rounded-full uppercase">Clean & Rose Gold</span>
+                <h3 class="font-serif font-bold text-base text-slate-900 mt-2">Tema Modern Minimalist</h3>
+                <p class="text-xs text-slate-500 mt-1 leading-relaxed">Bersih dan elegan dengan sentuhan rose gold serta galeri foto.</p>
+                <div class="mt-4 pt-3 border-t border-slate-100">
+                    <a href="./modern-minimalist/?to=Nama+Tamu" target="_blank" class="w-full py-2 bg-[#8e24aa] hover:bg-[#6a1b9a] text-white text-center rounded-xl text-xs font-semibold transition block">Lihat Demo <i class="fas fa-external-link-alt ml-1"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 14. BOHEMIAN CHIC -->
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition">
+            <div class="h-40 bg-[#fbe9e7] flex items-center justify-center border-b border-[#ffccbc] text-[#d84315] font-serif text-xl font-bold">🌾 Bohemian Chic</div>
+            <div class="p-5">
+                <span class="text-[10px] font-bold text-[#d84315] bg-[#fbe9e7] px-2 py-0.5 rounded-full uppercase">Ethnic & Terracotta</span>
+                <h3 class="font-serif font-bold text-base text-slate-900 mt-2">Tema Bohemian Chic</h3>
+                <p class="text-xs text-slate-500 mt-1 leading-relaxed">Unik dan etnik dengan warna terracotta, cocok untuk acara outdoor.</p>
+                <div class="mt-4 pt-3 border-t border-slate-100">
+                    <a href="./bohemian-chic/?to=Nama+Tamu" target="_blank" class="w-full py-2 bg-[#d84315] hover:bg-[#bf360c] text-white text-center rounded-xl text-xs font-semibold transition block">Lihat Demo <i class="fas fa-external-link-alt ml-1"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 15. ROYAL BURGUNDY -->
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden hover:shadow-md transition">
+            <div class="h-40 bg-[#4a0e17] flex items-center justify-center border-b border-[#800020] text-[#d4af37] font-serif text-xl font-bold">👑 Royal Burgundy</div>
+            <div class="p-5">
+                <span class="text-[10px] font-bold text-[#800020] bg-[#fce8e6] px-2 py-0.5 rounded-full uppercase">Maroon & Gold Luxury</span>
+                <h3 class="font-serif font-bold text-base text-slate-900 mt-2">Tema Royal Burgundy</h3>
+                <p class="text-xs text-slate-500 mt-1 leading-relaxed">Kaya akan ornamen klasik, bingkai ganda, dan nuansa merah marun mewah.</p>
+                <div class="mt-4 pt-3 border-t border-slate-100">
+                    <a href="./royal-burgundy/?to=Nama+Tamu" target="_blank" class="w-full py-2 bg-[#800020] hover:bg-[#5c0017] text-white text-center rounded-xl text-xs font-semibold transition block">Lihat Demo <i class="fas fa-external-link-alt ml-1"></i></a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- FOOTER BRANDING -->
+    <footer class="py-8 bg-slate-900 text-slate-400 text-center text-xs border-t border-slate-800">
+        <p>POWERED BY <a href="https://www.tokorazka.com" target="_blank" class="text-white font-semibold underline">WWW.TOKORAZKA.COM</a></p>
+        <p class="mt-2 text-[10px] text-slate-500">© 2026 All Rights Reserved</p>
+    </footer>
 
 </body>
 </html>
