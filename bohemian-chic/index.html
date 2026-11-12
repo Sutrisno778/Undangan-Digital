@@ -11,11 +11,8 @@
   body { font-family: 'Libre Caslon Text', serif; background: var(--cream); color: var(--text); line-height: 1.7; overflow-x: hidden; overflow-y: hidden; }
 
   /* COVER */
- #cover { 
-  position: fixed; inset: 0; 
-  background: linear-gradient(rgba(245,235,224,0.7), rgba(245,235,224,0.8)), url('cover.jpg') center/cover no-repeat; 
-  display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 9999; text-align: center; padding: 30px; transition: transform 1.5s cubic-bezier(0.77, 0, 0.175, 1); 
-}
+  #cover { position: fixed; inset: 0; background: linear-gradient(rgba(245,235,224,0.7), rgba(245,235,224,0.8)), url('https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=1200&q=80') center/cover no-repeat; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 9999; text-align: center; padding: 30px; transition: transform 1.5s cubic-bezier(0.77, 0, 0.175, 1); }
+  #cover.slide-up { transform: translateY(-100%); }
   .cover-frame { max-width: 450px; width: 100%; padding: 40px 25px; position: relative; border: 2px dashed var(--terracotta); background: rgba(255,255,255,0.5); backdrop-filter: blur(4px); border-radius: 15px; }
   .cover-label { font-family: 'Caveat', cursive; font-size: 1.2rem; letter-spacing: 2px; color: var(--terracotta-dark); margin-bottom: 15px; }
   .cover-names { font-family: 'Playfair Display', serif; font-size: 3.5rem; color: var(--terracotta-dark); line-height: 1.1; margin-bottom: 10px; font-style: italic; }
@@ -139,7 +136,7 @@
     <div class="ornament-divider"><span class="line"></span><span class="icon">☀</span><span class="line"></span></div>
     <div class="couple-wrap">
       <div class="person">
-        <div class="person-img-frame"><img src="images1.jpg" alt="Romeo"></div>
+        <div class="person-img-frame"><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=400&h=400" alt="Romeo"></div>
         <h3>Romeo Montague</h3>
         <p>Putra dari<br>Bpk. Montague & Ibu Montague</p>
       </div>
