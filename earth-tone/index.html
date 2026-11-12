@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Wedding of Romeo & Juliet | Earth Tone</title>
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root { --brown: #b08968; --brown-dark: #7f5539; --cream: #fdfbfb; --card: #faf3e0; --text: #333; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Poppins', sans-serif; background: var(--cream); color: var(--text); line-height: 1.7; overflow-x: hidden; overflow-y: hidden; }
+
+  /* COVER */
+  #cover { position: fixed; inset: 0; background: linear-gradient(rgba(253,251,251,0.7), rgba(253,251,251,0.8)), url('https://images.unsplash.com/photo-1519741497674-611481863552?w=1200&q=80') center/cover no-repeat; display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 9999; text-align: center; padding: 30px; transition: transform 1.5s cubic-bezier(0.77, 0, 0.175, 1); }
+  #cover.slide-up { transform: translateY(-100%); }
+  .cover-frame { max-width: 450px; width: 100%; padding: 40px 25px; position: relative; border: 1px solid var(--brown); background: rgba(255,255,255,0.6); backdrop-filter: blur(4px); border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+  .cover-label { font-family: 'Poppins', sans-serif; font-size: 0.8rem; letter-spacing: 4px; color: var(--brown-dark); margin-bottom: 15px; text-transform: uppercase; }
+  .cover-names { font-family: 'Great Vibes', cursive; font-size: 4rem; color: var(--brown); line-height: 1.1; margin-bottom: 10px; }
+  .cover-date { font-family: 'Poppins', sans-serif; font-size: 0.9rem; letter-spacing: 3px; color: var(--text); margin: 20px 0; }
+  .guest-box { margin: 25px 0; padding: 15px; background: var(--card); border: 1px solid var(--brown); border-radius: 10px; }
+  .guest-box p { font-size: 0.85rem; color: var(--text); margin-bottom: 5px; }
+  .guest-box h3 { font-family: 'Great Vibes', cursive; font-size: 2.2rem; color: var(--brown); }
+  .btn-open { background: var(--brown); color: #fff; border: none; padding: 12px 35px; font-family: 'Poppins', sans-serif; font-size: 0.85rem; letter-spacing: 2px; cursor: pointer; transition: all 0.4s; border-radius: 30px; text-transform: uppercase; }
+  .btn-open:hover { background: var(--brown-dark); transform: translateY(-2px); }
+
+  /* CONTENT */
+  .container { max-width: 650px; margin: 0 auto; position: relative; display: none; }
+  section { padding: 70px 25px; text-align: center; position: relative; }
+  section:nth-child(even) { background: var(--card); }
+  .section-title { font-family: 'Great Vibes', cursive; font-size: 3rem; color: var(--brown); margin-bottom: 10px; }
+  .ornament-divider { display: flex; align-items: center; justify-content: center; gap: 15px; margin: 15px auto 30px; }
+  .ornament-divider .line { width: 50px; height: 2px; background: var(--brown); }
+  .ornament-divider .icon { color: var(--brown); font-size: 1.2rem; }
+
+  .salam-title { font-family: 'Great Vibes', cursive; font-size: 2.2rem; color: var(--brown); margin-bottom: 20px; }
+  .invite-text { font-size: 1rem; color: var(--text); max-width: 480px; margin: 0 auto 20px auto; line-height: 1.7; font-style: italic; }
+  
+  .quote-box { font-style: italic; color: var(--text); max-width: 480px; margin: 0 auto; font-size: 1rem; line-height: 1.8; padding: 25px 20px; border-left: 3px solid var(--brown); border-right: 3px solid var(--brown); background: #fff; border-radius: 10px; }
+  .quote-box cite { display: block; margin-top: 15px; font-family: 'Poppins', sans-serif; font-style: normal; font-size: 0.8rem; color: var(--brown-dark); font-weight: 600; }
+
+  .couple-wrap { display: flex; justify-content: center; align-items: center; gap: 20px; flex-wrap: wrap; margin-top: 30px; }
+  .person { text-align: center; max-width: 260px; }
+  .person-img-frame { width: 160px; height: 160px; margin: 0 auto 15px; position: relative; padding: 6px; border: 2px solid var(--brown); border-radius: 50%; background: #fff; }
+  .person img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+  .person h3 { font-family: 'Great Vibes', cursive; font-size: 2.5rem; color: var(--brown); margin-bottom: 8px; }
+  .person p { font-size: 0.9rem; color: var(--text); line-height: 1.5; }
+  .couple-amp { font-family: 'Great Vibes', cursive; font-size: 3.5rem; color: var(--brown-dark); }
+
+  .countdown { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin-top: 25px; }
+  .countdown div { background: var(--brown); color: #fff; padding: 15px 5px; width: 70px; border-radius: 10px; }
+  .countdown span { display: block; font-family: 'Poppins', sans-serif; font-size: 1.8rem; font-weight: 600; }
+  .countdown small { font-size: 0.7rem; letter-spacing: 1px; text-transform: uppercase; }
+
+  .event-grid { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; margin-top: 20px; }
+  .luxury-card { background: #fff; border-left: 5px solid var(--brown); padding: 35px 20px; width: 100%; max-width: 300px; position: relative; border-radius: 10px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); text-align: left; }
+  .luxury-card h4 { font-family: 'Poppins', sans-serif; font-size: 1.2rem; color: var(--brown); margin-bottom: 15px; font-weight: 600; text-transform: uppercase; }
+  .luxury-card .date { font-size: 0.9rem; color: var(--text); margin-bottom: 10px; font-weight: 600; }
+  .luxury-card .time { font-size: 0.95rem; color: var(--text); margin-bottom: 15px; }
+  .luxury-card .place { font-family: 'Playfair Display', serif; font-size: 1rem; color: var(--brown-dark); font-style: italic; margin-bottom: 20px; line-height: 1.5; }
+  .btn-map { display: inline-block; padding: 8px 20px; background: var(--brown); color: #fff; text-decoration: none; font-size: 0.75rem; letter-spacing: 1px; transition: 0.3s; border-radius: 20px; text-transform: uppercase; }
+  .btn-map:hover { background: var(--brown-dark); }
+
+  .story-timeline { max-width: 500px; margin: 30px auto 0; position: relative; padding-left: 25px; text-align: left; }
+  .story-timeline::before { content: ''; position: absolute; left: 6px; top: 0; bottom: 0; width: 2px; background: var(--brown); }
+  .story-item { position: relative; margin-bottom: 35px; padding: 20px; background: #fff; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.05); }
+  .story-item::before { content: '🍂'; position: absolute; left: -26px; top: 18px; width: 14px; height: 14px; background: var(--cream); border: 2px solid var(--brown); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.6rem; }
+  .story-item h4 { font-family: 'Great Vibes', cursive; color: var(--brown); font-size: 1.8rem; margin-bottom: 8px; }
+  .story-item p { color: var(--text); font-size: 0.9rem; font-style: italic; line-height: 1.6; }
+
+  .gallery-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; margin-top: 25px; border-radius: 15px; overflow: hidden; }
+  .gallery-item { aspect-ratio: 1/1; overflow: hidden; border-radius: 10px; }
+  .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+  .gallery-item:hover img { transform: scale(1.1); }
+
+  .gift-card { background: #fff; border: 1px solid var(--brown); padding: 30px 20px; max-width: 400px; margin: 30px auto 0; border-radius: 15px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); }
+  .gift-card h4 { font-family: 'Great Vibes', cursive; color: var(--brown); font-size: 2rem; margin-bottom: 15px; }
+  .bank-info { display: flex; align-items: center; justify-content: center; gap: 15px; margin: 15px 0; padding: 15px; background: var(--card); border-radius: 10px; }
+  .bank-logo { font-weight: bold; color: var(--brown); font-size: 1.2rem; }
+  .bank-number { font-size: 1.3rem; color: var(--text); letter-spacing: 2px; font-weight: 600; }
+  .bank-name { font-size: 0.9rem; color: var(--text); font-style: italic; }
+  .btn-copy { margin-top: 15px; padding: 8px 20px; background: var(--brown); color: #fff; border: none; border-radius: 20px; font-size: 0.8rem; cursor: pointer; transition: 0.3s; text-transform: uppercase; letter-spacing: 1px; }
+  .btn-copy:hover { background: var(--brown-dark); }
+
+  .btn-rsvp { display: inline-block; padding: 12px 35px; background: var(--brown); color: #fff; text-decoration: none; font-family: 'Poppins', sans-serif; font-size: 0.85rem; letter-spacing: 1px; border-radius: 30px; transition: 0.3s; margin-top: 10px; text-transform: uppercase; }
+  .btn-rsvp:hover { background: var(--brown-dark); transform: translateY(-2px); }
+
+  .closing-text { font-size: 1rem; color: var(--text); max-width: 500px; margin: 0 auto; line-height: 1.8; font-style: italic; }
+  .wassalam { font-family: 'Great Vibes', cursive; font-size: 2.2rem; color: var(--brown); margin-top: 30px; }
+
+  footer { background: var(--text); padding: 40px 20px; text-align: center; color: #fff; }
+  footer .names { font-family: 'Great Vibes', cursive; font-size: 2.5rem; color: var(--brown); margin-bottom: 10px; }
+  footer p { font-size: 0.8rem; letter-spacing: 1px; }
+  footer a { color: var(--brown); text-decoration: none; }
+
+  .music-control { position: fixed; bottom: 25px; right: 25px; width: 48px; height: 48px; background: var(--brown); border-radius: 50%; display: none; justify-content: center; align-items: center; cursor: pointer; z-index: 9999; box-shadow: 0 5px 20px rgba(0,0,0,0.2); transition: all 0.3s; }
+  .music-control:hover { transform: scale(1.1); }
+  .music-control.playing { animation: spin 4s linear infinite; }
+  .music-control svg { width: 20px; height: 20px; fill: #fff; }
+  @keyframes spin { 100% { transform: rotate(360deg); } }
+
+  @media (max-width: 600px) {
+    .cover-names { font-size: 3.2rem; }
+    .section-title { font-size: 2.5rem; }
+    .person-img-frame { width: 140px; height: 140px; }
+    .person h3 { font-size: 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- COVER -->
+<div id="cover">
+  <div class="cover-frame">
+    <p class="cover-label">The Wedding Of</p>
+    <h1 class="cover-names">Romeo & Juliet</h1>
+    <p class="cover-date">25 • 12 • 2026</p>
+    <div class="guest-box">
+      <p>Kepada Bapak/Ibu/Saudara/i</p>
+      <h3>Nama Tamu</h3>
+    </div>
+    <button class="btn-open" onclick="bukaUndangan()">Buka Undangan</button>
+  </div>
+</div>
+
+<!-- MAIN CONTENT -->
+<div class="container" id="main-content">
+  <section>
+    <h2 class="salam-title">Assalamu'alaikum Wr. Wb.</h2>
+    <div class="ornament-divider"><span class="line"></span><span class="icon">🍂</span><span class="line"></span></div>
+    <p class="invite-text">Tanpa mengurangi rasa hormat, kami mengundang Bapak/Ibu/Saudara/i serta kerabat sekalian untuk menghadiri acara pernikahan kami.</p>
+  </section>
+
+  <section>
+    <h2 class="section-title">The Couple</h2>
+    <div class="ornament-divider"><span class="line"></span><span class="icon">🍂</span><span class="line"></span></div>
+    <div class="couple-wrap">
+      <div class="person">
+        <div class="person-img-frame"><img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=400&h=400" alt="Romeo"></div>
+        <h3>Romeo Montague</h3>
+        <p>Putra dari<br>Bpk. Montague & Ibu Montague</p>
+      </div>
+      <div class="couple-amp">&</div>
+      <div class="person">
+        <div class="person-img-frame"><img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400&h=400" alt="Juliet"></div>
+        <h3>Juliet Capulet</h3>
+        <p>Putri dari<br>Bpk. Capulet & Ibu Capulet</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="quote-box">
+      "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu istri-istri dari jenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya."
+      <cite>— QS. Ar-Rum : 21</cite>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Counting Days</h2>
+    <div class="ornament-divider"><span class="line"></span><span class="icon">🍂</span><span class="line"></span></div>
+    <div class="countdown">
+      <div><span id="days">0</span><small>Hari</small></div>
+      <div><span id="hours">0</span><small>Jam</small></div>
+      <div><span id="minutes">0</span><small>Menit</small></div>
+      <div><span id="seconds">0</span><small>Detik</small></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Save The Date</h2>
+    <div class="ornament-divider"><span class="line"></span><span class="icon">🍂</span><span class="line"></span></div>
+    <p style="color: var(--brown); letter-spacing: 2px; margin-bottom: 20px; font-weight: 600;">Minggu, 25 Desember 2026</p>
+    <div class="event-grid">
+      <div class="luxury-card">
+        <h4>Akad Nikah</h4>
+        <p class="date">Minggu, 25 Desember 2026</p>
+        <p class="time">Pukul 08.00 — 10.00 WIB</p>
+        <p class="place">Masjid Agung Al-Barkah</p>
+        <a href="https://maps.google.com" class="btn-map" target="_blank">Lihat Lokasi</a>
+      </div>
+      <div class="luxury-card">
+        <h4>Resepsi</h4>
+        <p class="date">Minggu, 25 Desember 2026</p>
+        <p class="time">Pukul 11.00 — 14.00 WIB</p>
+        <p class="place">Grand Ballroom Hotel</p>
+        <a href="https://maps.google.com" class="btn-map" target="_blank">Lihat Lokasi</a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Love Story</h2>
+    <div class="ornament-divider"><span class="line"></span><span class="icon">🍂</span><span class="line"></span></div>
+    <div class="story-timeline">
+      <div class="story-item"><h4>Pertama Bertemu</h4><p>Berawal dari pertemuan sederhana, kami saling mengenal dan mulai berbagi banyak cerita. Tanpa disadari, kebersamaan itu tumbuh menjadi rasa nyaman yang semakin kuat.</p></div>
+      <div class="story-item"><h4>Lamaran</h4><p>Dengan niat yang tulus dan restu keluarga, kami memutuskan untuk melangkah ke tahap yang lebih serius. Momen lamaran menjadi awal dari perjalanan baru yang penuh harapan.</p></div>
+      <div class="story-item"><h4>Pernikahan</h4><p>Kini kami sampai pada hari yang kami nantikan, hari di mana dua hati dipersatukan dalam ikatan suci pernikahan. Semoga langkah ini menjadi awal kehidupan baru yang penuh keberkahan.</p></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Our Moments</h2>
+    <div class="ornament-divider"><span class="line"></span><span class="icon">🍂</span><span class="line"></span></div>
+    <p class="invite-text" style="font-size: 1rem; margin-bottom: 20px;">Setiap momen bersama adalah cerita indah yang tak terlupakan.</p>
+    <div class="gallery-grid">
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1519741497674-611481863552?w=500" alt="1"></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=500" alt="2"></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1529636798458-921cf9424a28?w=500" alt="3"></div>
+      <div class="gallery-item"><img src="https://images.unsplash.com/photo-1525772764200-be829a350797?w=500" alt="4"></div>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Amplop Digital</h2>
+    <div class="ornament-divider"><span class="line"></span><span class="icon">🍂</span><span class="line"></span></div>
+    <p class="invite-text" style="font-size: 1rem;">Doa restu Anda merupakan karunia yang sangat berarti bagi kami, dan jika memberi adalah ungkapan tanda kasih, Anda dapat memberi kado secara cashless.</p>
+    <div class="gift-card">
+      <h4>Transfer Bank</h4>
+      <div class="bank-info">
+        <span class="bank-logo">BCA</span>
+        <div><div class="bank-number" id="rek">1234567890</div><div class="bank-name">a.n. Romeo Montague</div></div>
+      </div>
+      <button class="btn-copy" onclick="copyRekening()">Salin Nomor Rekening</button>
+    </div>
+  </section>
+
+  <section>
+    <h2 class="section-title">Konfirmasi Kehadiran</h2>
+    <div class="ornament-divider"><span class="line"></span><span class="icon">🍂</span><span class="line"></span></div>
+    <p class="invite-text" style="font-size: 1rem; margin-bottom: 25px;">Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu.</p>
+    <a href="https://wa.me/6285338564565?text=Halo,%20saya%20ingin%20konfirmasi%20kehadiran%20di%20pernikahan%20Romeo%20%26%20Juliet" class="btn-rsvp" target="_blank">Konfirmasi via WhatsApp</a>
+  </section>
+
+  <section>
+    <div class="ornament-divider"><span class="line"></span><span class="icon">🍂</span><span class="line"></span></div>
+    <p class="closing-text">Atas kehadiran dan doa restunya, kami mengucapkan terima kasih.</p>
+    <p class="wassalam">Wassalamu'alaikum Wr. Wb.</p>
+  </section>
+
+  <footer>
+    <p class="names">Romeo & Juliet</p>
+    <p>Dibuat dengan ❤️ oleh <a href="https://www.tokorazka.com/" target="_blank">Toko Razka</a></p>
+  </footer>
+</div>
+
+<!-- AUDIO & MUSIC -->
+<audio id="bg-music" loop><source src="musik.mp3" type="audio/mpeg"></audio>
+<div class="music-control" id="music-btn" onclick="toggleMusic()">
+  <svg id="icon-pause" viewBox="0 0 24 24"><path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/></svg>
+  <svg id="icon-play" viewBox="0 0 24 24" style="display:none;"><path d="M8 5v14l11-7z"/></svg>
+</div>
+
+<script>
+  function bukaUndangan() {
+    document.getElementById('cover').classList.add('slide-up');
+    document.getElementById('main-content').style.display = 'block';
+    document.body.style.overflowY = 'auto';
+    document.getElementById('music-btn').style.display = 'flex';
+    const music = document.getElementById('bg-music');
+    music.volume = 0.5;
+    music.play().then(() => {
+      document.getElementById('music-btn').classList.add('playing');
+      document.getElementById('icon-pause').style.display = 'block';
+      document.getElementById('icon-play').style.display = 'none';
+    }).catch(e => console.log("Autoplay diblokir"));
+  }
+  function toggleMusic() {
+    const music = document.getElementById('bg-music');
+    const btn = document.getElementById('music-btn');
+    if (music.paused) {
+      music.play(); btn.classList.add('playing');
+      document.getElementById('icon-pause').style.display = 'block';
+      document.getElementById('icon-play').style.display = 'none';
+    } else {
+      music.pause(); btn.classList.remove('playing');
+      document.getElementById('icon-pause').style.display = 'none';
+      document.getElementById('icon-play').style.display = 'block';
+    }
+  }
+  function copyRekening() {
+    navigator.clipboard.writeText(document.getElementById('rek').innerText).then(() => alert('Nomor rekening berhasil disalin!'));
+  }
+  const target = new Date("2026-12-25T08:00:00").getTime();
+  setInterval(() => {
+    const diff = target - new Date().getTime();
+    if (diff > 0) {
+      document.getElementById("days").textContent = Math.floor(diff / (1000*60*60*24));
+      document.getElementById("hours").textContent = Math.floor((diff % (1000*60*60*24)) / (1000*60*60));
+      document.getElementById("minutes").textContent = Math.floor((diff % (1000*60*60)) / (1000*60));
+      document.getElementById("seconds").textContent = Math.floor((diff % (1000*60)) / 1000);
+    }
+  }, 1000);
+</script>
+</body>
+</html>
